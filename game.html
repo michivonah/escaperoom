@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+         <title>Escape Room</title>
+         <link rel="icon" type="image/png" href="favicon.png">
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script src="https://d3js.org/d3.v6.min.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+         <link rel="stylesheet" type="text/css" href="game.css">
+         <script language="javascript" type="text/javascript" src="game.js"></script>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+         <link rel="preconnect" href="https://fonts.gstatic.com">
+         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+         <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+</head>
+<body onload="window.setInterval('timecounter()',1000)">
+
+        <div id="game">
+          <div id="rooms">
+            <div id="room1" class="room">
+              <h1>Arbeitszimmer/B&uuml;ro</h1>
+              <img id="item-desk1" src="graphics/rooms/office/desk.svg" draggable="false" style="position:absolute; top: 39vh; left: -5%; width:585px;">
+              <img id="item-apple1" src="graphics/rooms/office/apple.svg" draggable="false" onclick="toggleBackpack()" style="position:absolute; top: 80%; left: 45%; width:60px;">
+              <img id="item-officechair1" src="graphics/rooms/office/officechair.png" draggable="false" onclick="createNewWindow('der Bürostuhl', 'image', 'graphics/rooms/office/officechair.png')" style="position:absolute; top: 50vh; left: 40%; height: 200px;">
+              <img id="item-pocketligher1" src="graphics/rooms/office/pocketlighter.svg" draggable="false" onclick="toggleBackpack()" style="position:absolute; top: 51vh; left: 32%; width:40px; transform: rotate(-80deg);">
+              <img id="item-fruitbowlpicture1" src="graphics/rooms/office/fruitbowl-picture.png" draggable="false" style="position:absolute; top: 8vh; left: 30%; height: 200px;">
+              <img id="item-flower1" src="graphics/rooms/office/flower3.png" draggable="false" onclick="useItemfromBackpack('item-wateringcan1')" style="position:absolute; top: 62%; left: 80%; width: 120px;">
+              <img id="item-lightbulb1" src="graphics/rooms/office/lightbulb2.png" draggable="false" onclick="toggleBackpack()" style="position:absolute; top: 79%; left: 66%; width: 60px;">
+              <img id="item-map1" src="graphics/rooms/office/map2.svg" draggable="false" onclick="createNewWindow('Europa Karte', 'image', 'graphics/rooms/office/europe-map2.png')" style="position:absolute; top: 50%; left: 25%; width: 65px; transform: rotate(-6deg);">
+              <img id="item-letter1" src="graphics/rooms/office/letter.png" draggable="false" onclick="createNewWindow('der Brief', 'image', 'graphics/rooms/office/letter-paper.png')" style="position:absolute; top: 56%; left: 18%; width: 65px; transform: rotate(0deg);">
+            </div>
+            <div id="room2" class="room">
+              <h1>Schlafzimmer</h1>
+              <img id="item-bed1" src="graphics/rooms/bedroom/bed.png" draggable="false" onclick="useItemfromBackpack('item-teddy1')" style="position:absolute; top: 55vh; left: 52%; width:38%;">
+              <img id="item-cabinet1" src="graphics/rooms/bedroom/cabinet2.svg" draggable="false" onclick="createNewWindow('der alte Schrank', 'cabinet', 'graphics/rooms/bedroom/wateringcan.svg')" style="position:absolute; top: 32vh; left: -2%; width:160px;">
+              <img id="item-chair4" src="graphics/rooms/bedroom/chair.png" draggable="false" style="position:absolute; top: 40vh; left: 20%; width:175px; z-index: 80;">
+              <img id="item-tshirt1" src="graphics/rooms/bedroom/tshirt.png" draggable="false" onclick="removeItem()" style="position:absolute; top: 40vh; left: 20%; width:175px; z-index: 82;">
+              <img id="item-key1" src="graphics/rooms/bedroom/key.svg" draggable="false" onclick="toggleBackpack()" style="position:absolute; top: 53.5vh; left: 27%; width:75px; z-index: 81; transform: rotate(25deg);">
+              <img id="item-candle1" src="graphics/rooms/bedroom/candle2-off.svg" draggable="false" onclick="useItemfromBackpack('item-pocketligher1')" style="position:absolute; top: 72vh; left: 76%; width:30px;">
+              <img id="item-lamp1" src="graphics/rooms/bedroom/lamp.png" draggable="false" style="position:absolute; top: 0vh; left: 30%; width:130px;">
+              <img id="item-fire1" src="graphics/rooms/bedroom/fire-extinguisher.svg" draggable="false" onclick="toggleBackpack(); useItemfromBackpack('item-fire1');" style="position:absolute; top: 59vh; left: 10%; width:80px;">
+              <img id="item-window1" src="graphics/rooms/bedroom/window1.png" draggable="false" style="position:absolute; top: 10%; left: 62%; width:140px; filter: opacity(95%) brightness(110%);">
+            </div>
+            <div id="room3" class="room">
+              <h1>K&uuml;che</h1>
+              <img id="item-oven1" src="graphics/rooms/kitchen/oven3.png" draggable="false" style="position:absolute; top: 41vh; left: 14%; width:180px;">
+              <img id="item-table1" src="graphics/rooms/kitchen/table.svg" draggable="false" style="position:absolute; top: 60vh; left: 55%; width:400px; z-index: 71;">
+              <img id="item-chair1" src="graphics/rooms/kitchen/chair.png" draggable="false" style="position:absolute; top: 68vh; left: 54%; width:110px; z-index: 69;">
+              <img id="item-chair2" src="graphics/rooms/kitchen/chair-qrcode.png" draggable="false" onclick="createNewWindow('ein mysteriöser QR-Code', 'image', 'graphics/rooms/kitchen/Juneau-QRCode2.png')" style="position:absolute; top: 77vh; left: 64%; width:110px; z-index: 73;">
+              <img id="item-chair3" src="graphics/rooms/kitchen/chair.png" draggable="false" style="position:absolute; top: 77vh; left: 79%; width:110px; z-index: 72;">
+              <img id="item-teddy1" src="graphics/rooms/kitchen/teddy3.png" draggable="false" onclick="toggleBackpack()" style="position:absolute; top: 53vh; left: 56%; width:95px; z-index: 70;">
+              <img id="item-calendar1" src="graphics/rooms/kitchen/calendar.png" onclick="createNewWindow('Der Rätselkalender', 'calendarquiz', 'graphics/rooms/kitchen/calendar2.png')" draggable="false" style="position:absolute; top: 24vh; left: 72%; width:100px;">
+              <img id="item-fruitbowl1" src="graphics/rooms/kitchen/fruitbowl.png" draggable="false" onclick="createNewWindow('Komische Buchstaben auf der Schüssel', 'image', 'graphics/rooms/kitchen/fruitbowl.png')" style="position:absolute; top: 59vh; left: 67%; width:80px; z-index: 75;">
+              <img id="item-radio1" src="graphics/rooms/kitchen/radio.png" draggable="false" onclick="playAudio('sounds/radio_audioraetsel.mp3')" style="position:absolute; top: 52vh; left: 80%; width:70px; z-index: 74;">
+              <img id="item-window2" src="graphics/rooms/kitchen/window.svg" draggable="false" style="position:absolute; top: 6%; left: 35%; width:140px;">
+              <img id="item-pan1" src="graphics/rooms/kitchen/pan.png" draggable="false" onclick="createNewWindow('Die verbrannte Pfanne', 'image', 'graphics/rooms/kitchen/pan.png')" style="position:absolute; top: 35vh; left: 25%; width:85px; z-index: 76;">
+              <img id="item-fire2" src="graphics/rooms/kitchen/fire.svg" draggable="false" onclick="useItemfromBackpack('item-fire1')" style="position:absolute; top: 27%; left: 24.5%; width:80px; z-index: 77;">
+            </div>
+            <div id="room4" class="room">
+              <h1>Ausgang</h1>
+              <img id="item-door1" src="graphics/rooms/exit/door2-lock.png" draggable="false" onclick="useItemfromBackpack('item-key1')" style="position:absolute; top: 22.4vh; left: 28%; width:180px; z-index: 90;">
+              <img id="item-keypad1" src="graphics/rooms/exit/keypad.svg" draggable="false" onclick="createNewWindow('Der Code zur Freiheit!', 'keypad', 'graphics/rooms/exit/keypad.svg')" style="position:absolute; top: 43vh; left: 36%; width:40px; z-index: 91; display:none;">
+              <img id="item-lock1" src="graphics/rooms/exit/lock.svg" draggable="false" onclick="useItemfromBackpack('item-key1')" style="position:absolute; top: 47%; left: 43%; width:22px; z-index: 92; display:none;">
+              <img id="item-shoe1" src="graphics/rooms/exit/shoe1.svg" draggable="false" style="position:absolute; top: 62vh; left: 65%; width:60px; transform: scaleX(-1);">
+              <img id="item-shoe2" src="graphics/rooms/exit/shoe2.svg" draggable="false" onclick="toggleBackpack()" style="position:absolute; top: 63vh; left: 15%; width:80px;">
+              <img id="item-jacket1" src="graphics/rooms/exit/jacket.svg" draggable="false" style="position:absolute; top: 25vh; left: 55%; width:120px;">
+            </div>
+            <div id="congrats" class="room">
+              <h1>Herzlich Gratulation, sie haben es geschafft meinen Escape Room zu lösen.</h1>
+              <p id="yourtime">Zeit: 0:00 Minuten</p>
+              <p id="highscore">Highscore: error</p>
+              <img src="graphics/rooms/congrats/balloons.svg" draggable="false" style="position:absolute; top: 60vh; left: 75%; width:120px;">
+              <p>Wenn sie es nochmal versuchen wollen, um eine bessere Zeit aufzustellen, klicken sie unten auf den Reload Knopf. Bis nachher</p>
+              <h3>Michi</h3>
+            </div>
+            <div id="startscreen" class="room" style="display: block;">
+              <h1>Michi&prime;s Escape Room</h1>
+              <img src="graphics/media/1.png" draggable="false" style="width: 90%; max-width: 450px;">
+              <button onclick="playgame()">Start</button>
+              <button onclick="createNewWindow('Quellen', 'sources')">Quellen</button>
+              <button style="display: none;">Schliessen</button>
+            </div>
+          </div>
+
+          <div id="backpack">
+            <div id="lastRoom" class="backpack-btn" style="float:left;" onclick="lastRoom()">
+              <i class="fas fa-arrow-circle-left"></i>
+            </div>
+            <div id="backpack-content">
+            </div>
+            <div id="nextRoom" class="backpack-btn" style="float:right;" onclick="nextRoom()">
+              <i class="fas fa-arrow-circle-right"></i>
+            </div>
+          </div>
+
+          <div id="puzzleWindowContainer">
+          </div>
+          <div id="audioContainer" style="display:none;">
+            <audio id="audio-player"></audio>
+            <audio id="bg-music-player" src="sounds/background-music2.mp3" autoplay loop muted></audio>
+          </div>
+
+          <div id="controlButtons">
+            <button id="mute-btn" class="controlbutton" onclick="toggleMusic()"><i class="fas fa-volume-mute" id="mute-btn-i"></i></button>
+          </div>
+        </div>
+
+        <script>
+        // Loading
+        $(window).on("load", function(){
+          //$("#loading-screen").fadeOut(750);
+          console.log("Page loaded.");
+          //createNewWindow("Hello World!");
+        });
+
+        // drop zone // altes Drag&Drop Script
+        /*
+        function allowDrop(item){
+          item.preventDefault();
+        }
+
+        function drag(item){
+          item.dataTransfer.setData('text', item.target.id);
+          //document.getElementById(event.target.id).style.position = "static";
+          if(document.getElementById(event.target.id).style.position == "absolute"){
+            document.getElementById(event.target.id).style.position = "static";
+          }
+          else if(document.getElementById(event.target.id).style.position == "static"){
+            document.getElementById(event.target.id).style.position = "absolute";
+          }
+        }
+
+        function drop(item){
+          item.preventDefault();
+          var data = item.dataTransfer.getData('text');
+          item.target.appendChild(document.getElementById(data));
+          console.log(item + "dragged.")
+          if(event.target.id == "backpack"){
+            alert(event.target.id);
+            if(document.getElementById(data.Child).style.position == "absolute"){
+              document.getElementById(data.Child).style.position = "static";
+            }
+            else if(document.getElementById(data.Child).style.position == "static"){
+              document.getElementById(data.Child).style.position = "absolute";
+            }
+          }
+        }
+        */
+
+        // add to backpack/add to room from backpack
+        function toggleBackpack(){ // funktioniert nur mit Bildern
+          var backpack = document.getElementById('backpack');
+          var item = event.target.id;
+          if(event.target.parentNode.id != "backpack"){
+            document.getElementById(item).style.position = "static";
+            backpack.appendChild(document.getElementById(item));
+          }
+          /*
+          else{
+            if(document.getElementById('room1').style.display == "block"){
+              var roomId = document.getElementById('room1');
+            }
+            else if(document.getElementById('room2').style.display == "block"){
+              var roomId = document.getElementById('room2');
+            }
+            else if(document.getElementById('room3').style.display == "block"){
+              var roomId = document.getElementById('room3');
+            }
+            document.getElementById(item).style.position = "absolute";
+            roomId.appendChild(document.getElementById(item));
+          }
+          */
+          else{
+            // detect room
+            if(document.getElementById('room1').style.display == "block"){
+              var roomName = "room1";
+            }
+            else if(document.getElementById('room2').style.display == "block"){
+              var roomName = "room2";
+            }
+            else if(document.getElementById('room3').style.display == "block"){
+              var roomName = "room3";
+            }
+            else if(document.getElementById('room4').style.display == "block"){
+              var roomName = "room4";
+            }
+            else{
+              console.log("Error");
+            }
+            // use item
+            console.log("You are the item in backpack.")
+            if(item == "item-fire1"){
+              if(document.getElementById('item-fire2').parentNode.id == roomName){
+                document.getElementById('item-fire1').remove();
+                document.getElementById('item-fire2').remove();
+                //document.getElementById('room3').childNodes.includes('item-fire2')
+              }
+            }
+            else if(item == "item-pocketligher1"){
+              if(document.getElementById('item-candle1').parentNode.id == roomName){
+                document.getElementById('item-candle1').src = "graphics/rooms/bedroom/candle2.png";
+                document.getElementById('item-pocketligher1').remove();
+              }
+            }
+            else if(item == "item-key1"){
+              if(roomName == "room4"){
+                document.getElementById('item-key1').remove(); //+ad event listener
+                document.getElementById('item-door1').src = "graphics/rooms/exit/door2.png";
+                document.getElementById('item-door1').addEventListener("click", function(){
+                  createNewWindow('Der Code zur Freiheit!', 'keypad', 'graphics/rooms/exit/keypad.svg');
+                });
+              }
+            }
+            else if(item == "item-lightbulb1"){
+              if(roomName == "room2"){
+                document.getElementById('room2').style.filter = "brightness(100%)";
+                document.getElementById('item-lightbulb1').remove();
+              }
+            }
+            else if(item == "item-teddy1"){
+              if(document.getElementById('item-bed1').parentNode.id == roomName){
+                document.getElementById('item-bed1').src = "graphics/rooms/bedroom/bed-teddy.png";
+                document.getElementById('item-teddy1').remove();
+                document.getElementById('item-bed1').addEventListener("click", function(){
+                  createNewWindow('das bezogene Bett', 'image', 'graphics/rooms/bedroom/bed-teddy-zoom.png');
+                });
+              }
+            }
+            else if(item == "item-wateringcan1"){
+              if(document.getElementById('item-flower1').parentNode.id == roomName){
+                document.getElementById('item-flower1').src = "graphics/rooms/office/flower2.png";
+                document.getElementById('item-wateringcan1').remove();
+              }
+            }
+            else if(item == "item-apple1"){
+              if(roomName == "room3"){
+                document.getElementById('item-apple1').remove();
+                createNewWindow('Komische Buchstaben auf der Schüssel', 'image', 'graphics/rooms/kitchen/fruitbowl.png');
+              }
+            }
+          }
+          console.log(item + " added to " + event.target.parentNode.id);
+        }
+
+
+
+        // change room
+        function nextRoom(){ // go to the next room
+          var numberOfRooms = 4;
+          if(document.getElementById('room1').style.display == "block"){
+            var room = 1;
+          }
+          else if(document.getElementById('room2').style.display == "block"){
+            var room = 2;
+          }
+          else if(document.getElementById('room3').style.display == "block"){
+            var room = 3;
+          }
+          else if(document.getElementById('room4').style.display == "block"){
+            var room = 4;
+          }
+          else{
+            console.log("Error");
+          }
+
+          if(room == numberOfRooms){ // wenn Room gleich wie Anzahl Räume
+            var room = 1;
+          }
+          else{
+            room++
+          }
+          var roomName = "room" + room;
+          document.getElementById("room1").style.display = "none";
+          document.getElementById("room2").style.display = "none";
+          document.getElementById("room3").style.display = "none";
+          document.getElementById("room4").style.display = "none";
+          document.getElementById(roomName).style.display = "block";
+          console.log(roomName + " opened.");
+          document.getElementById('puzzleWindowContainer').innerHTML = '';
+        }
+
+        function lastRoom(){ // go to the last room
+          var numberOfRooms = 4;
+          if(document.getElementById('room1').style.display == "block"){
+            var room = 1;
+          }
+          else if(document.getElementById('room2').style.display == "block"){
+            var room = 2;
+          }
+          else if(document.getElementById('room3').style.display == "block"){
+            var room = 3;
+          }
+          else if(document.getElementById('room4').style.display == "block"){
+            var room = 4;
+          }
+          else{
+            console.log("Error");
+          }
+
+          if(room == 1){ // wenn Room gleich wie Anzahl Räume
+            var room = numberOfRooms;
+          }
+          else{
+            room--
+          }
+          var roomName = "room" + room;
+          document.getElementById("room1").style.display = "none";
+          document.getElementById("room2").style.display = "none";
+          document.getElementById("room3").style.display = "none";
+          document.getElementById("room4").style.display = "none";
+          document.getElementById(roomName).style.display = "block";
+          console.log(roomName + " opened.");
+          document.getElementById('puzzleWindowContainer').innerHTML = '';
+        }
+
+        function addEvListenerToWindow(){
+          document.getElementsByClassName('closeWindowBtn')[0].addEventListener("click", function(){
+            document.getElementsByClassName('puzzleWindow')[0].style.display = "none";
+            document.getElementsByClassName('puzzleWindow')[0].remove();
+            console.log("Window removed.");
+          });
+          console.log("Event Listener added to new window.");
+        }
+
+        function createNewWindow(title, windowtype, content){
+          if(document.getElementsByClassName('closeWindowBtn')[0] == null){
+            var newWindow = document.createElement('div');
+            newWindow.className = "puzzleWindow";
+            var newtitle = document.createElement('h1');
+            newtitle.textContent = title;
+            var newCloseBtn = document.createElement('i');
+            newCloseBtn.className = "fas fa-times-circle closeWindowBtn";
+            newWindow.appendChild(newtitle);
+            newWindow.appendChild(newCloseBtn);
+            if(windowtype == "image"){
+              if(event.target.id == "item-pan1"){
+                var newImage = document.createElement('img');
+                newImage.src = content;
+                newWindow.appendChild(newImage);
+              }
+              else{
+                var newImage = document.createElement('img');
+                newImage.src = content;
+                newWindow.appendChild(newImage);
+              }
+            }
+            else if(windowtype == "calendarquiz"){
+              var newImage = document.createElement('img');
+              var newInput = document.createElement('input');
+              var newButton = document.createElement('button');
+              newImage.src = content;
+              newImage.style.height = "40vw";
+              newInput.type = "text";
+              newInput.placeholder = "Was ist die Hauptstadt von Alaska?";
+              newButton.textContent = "✔️";
+              newButton.addEventListener("click", function(){
+                if(newInput.value.toUpperCase().includes('JUNEAU')){
+                  console.log('Answer ' + newInput.value + ' is correct!')
+                  newInput.value = "";
+                  newImage.src = "graphics/rooms/kitchen/calendar-correct.png";
+                }
+                else{
+                  console.log('Answer ' + newInput.value + ' is incorrect!')
+                  newInput.value = "";
+                }
+              });
+              newWindow.appendChild(newImage);
+              newWindow.appendChild(newInput);
+              newWindow.appendChild(newButton);
+            }
+            else if(windowtype == "keypad"){
+              var newImage = document.createElement('img');
+              var newInput = document.createElement('input');
+              var newButton = document.createElement('button');
+              newImage.src = content;
+              newImage.style.height = "40vw";
+              newInput.type = "number";
+              newInput.required = true;
+              newInput.minlength = 7;
+              newInput.placeholder = "Code eingeben...";
+              newButton.textContent = "✔️";
+              newButton.addEventListener("click", function(){
+                if(newInput.value.toUpperCase().includes('1596742')){
+                  console.log('Answer ' + newInput.value + ' is correct!')
+                  newInput.value = "";
+                  newImage.src = "graphics/rooms/kitchen/calendar-correct.png";
+                  // get score
+                  sessionStorage.setItem('yourTime', sessionStorage.getItem('time'));
+                  if(localStorage.getItem('highscore') >= sessionStorage.getItem('yourTime')){
+                    localStorage.setItem('highscore', sessionStorage.getItem('yourTime'));
+                    console.log('New highscore set to ' + localStorage.getItem('highscore'));
+                  }
+                  document.getElementById('yourtime').textContent = "Zeit: " + sessionStorage.getItem('time') + 's';
+                  document.getElementById('highscore').textContent = "Highscore: " + localStorage.getItem('highscore') + 's';
+                  // end game
+                  document.getElementById('room4').style.display = "none";
+                  document.getElementById('backpack').style.display = "none";
+                  document.getElementById('controlButtons').style.display = "none";
+                  document.getElementsByClassName('puzzleWindow')[0].remove();
+                  document.getElementById('bg-music-player').src = "sounds/background-music1.mp3";
+                  document.getElementById('bg-music-player').muted = false;
+                  document.getElementById('congrats').style.display = "block";
+
+                }
+                else{
+                  console.log('Answer ' + newInput.value + ' is incorrect!')
+                  newInput.value = "";
+                }
+              });
+              //newWindow.appendChild(newImage);
+              newWindow.appendChild(newInput);
+              newWindow.appendChild(newButton);
+            }
+            else if(windowtype == "cabinet"){
+              var newImage = document.createElement('img');
+              newImage.src = "graphics/rooms/bedroom/cabinet-open.svg";
+              newWindow.appendChild(newImage);
+              var newItem = document.createElement('img');
+              newItem.src = "graphics/rooms/bedroom/wateringcan.svg";
+              newItem.id = "item-wateringcan1";
+              newItem.draggable = false;
+              newItem.style.position = "absolute";
+              newItem.style.top = "55%";
+              newItem.style.left = "32%";
+              newItem.style.width = "135px";
+              newItem.addEventListener("click", function(){
+                toggleBackpack();
+              });
+              newWindow.appendChild(newItem);
+              // <img id="item-teddy1" src="graphics/rooms/kitchen/teddy3.png" draggable="false" onclick="toggleBackpack()" style="position:absolute; top: 53vh; left: 56%; width:95px; z-index: 70;">
+            }
+            else if(windowtype == "sources"){
+              var newText = document.createElement('p');
+              newText.textContent = "Alle Grafiken der Gegenstände sind von Pixabay. Einige der Grafiken habe ich vor der Verwendung in meinem Projekt bearbeitet, damit sie zum Inhalt passen. Die Räume im Hintergrund habe ich alle selbst gezeichnet. Das Logo wurde mit Canva erstellt.";
+              newWindow.appendChild(newText);
+              var newImage = document.createElement('img');
+              newImage.src = "https://pixabay.com/static/img/public/medium_rectangle_b.png";
+              newImage.style.width = "200px";
+              newImage.style.borderRadius = "8px";
+              newWindow.appendChild(newImage);
+              newWindow.style.background = "#2dd0df";
+              newWindow.style.color = "#fff";
+              newWindow.style.border = "8px solid #fff";
+            }
+            document.getElementById("puzzleWindowContainer").appendChild(newWindow);
+            addEvListenerToWindow();
+            console.log("New window with title " + title + " created.");
+          }
+          console.log("Close the open window, before you can open another.")
+        }
+
+        function removeItem(){
+          var item = event.target.id;
+          document.getElementById(item).remove();
+          console.log(item + " removed.");
+        }
+
+        function playAudio(source){
+          var audioplayer = document.getElementById('audio-player');
+          var item = event.target.id;
+          //document.getElementById(item).remove();
+          audioplayer.src = source;
+          audioplayer.play();
+          console.log(item + " started to play the audio: " + source);
+        }
+
+        function useItemfromBackpack(backpackitem1){
+          var backpackitem2 = document.getElementById(backpackitem1);
+          var item = event.target.id;
+          /*if(event.target.parentNode.id == "backpack"){
+            console.log("You are the item in backpack.")
+            if(item == "item-fire1"){
+              document.getElementById('item-fire1').remove();
+              document.getElementById('item-fire2').remove();
+            }
+          }*/
+          if(backpackitem2.parentNode.id == "backpack"){
+            console.log("The item you need is in the backpack.")
+            if(item == "item-fire2"){
+              document.getElementById('item-fire1').remove();
+              document.getElementById('item-fire2').remove();
+            }
+            else if(item == "item-candle1"){
+              document.getElementById('item-candle1').src = "graphics/rooms/bedroom/candle2.png";
+              document.getElementById('item-pocketligher1').remove();
+            }
+            else if(item == "item-door1"){
+              //document.getElementById('item-lock1').remove();
+              document.getElementById('item-key1').remove(); //+ad event listener
+              document.getElementById('item-door1').src = "graphics/rooms/exit/door2.png";
+              document.getElementById('item-door1').addEventListener("click", function(){
+                createNewWindow('Der Code zur Freiheit!', 'keypad', 'graphics/rooms/exit/keypad.svg');
+              });
+            }
+            else if(item == "item-lamp1"){
+              document.getElementById("room2").style.filter = "brightness(100%)";
+              document.getElementById('item-lightbulb1').remove();
+            }
+            else if(item == "item-bed1"){
+              document.getElementById('item-bed1').src = "graphics/rooms/bedroom/bed-teddy.png";
+              document.getElementById('item-teddy1').remove();
+              document.getElementById('item-bed1').addEventListener("click", function(){
+                createNewWindow('das bezogene Bett', 'image', 'graphics/rooms/bedroom/bed-teddy-zoom.png')
+              });
+            }
+            else if(item == "item-flower1"){
+              document.getElementById('item-flower1').src = "graphics/rooms/office/flower2.png";
+              document.getElementById('item-wateringcan1').remove();
+            }
+          }
+          else{
+            console.log('You need to have ' + backpackitem1 + ' in your backpack to operate with ' + item + '.');
+          }
+        }
+
+        function toggleMusic(type){
+          // types: toggle, on, off
+          var bgMusicPlayer = document.getElementById('bg-music-player');
+          if(bgMusicPlayer.muted == true){
+            bgMusicPlayer.muted = false;
+            document.getElementById('mute-btn-i').className = "fas fa-volume-up";
+          }
+          else{
+            bgMusicPlayer.muted = true;
+            document.getElementById('mute-btn-i').className = "fas fa-volume-mute";
+          }
+        }
+
+        function playgame(){
+          document.getElementById("room1").style.display = "block";
+          document.getElementById("room2").style.display = "none";
+          document.getElementById("room3").style.display = "none";
+          document.getElementById("room4").style.display = "none";
+          document.getElementById("backpack").style.display = "block";
+          document.getElementById('controlButtons').style.display = "block";
+          sessionStorage.setItem('time', 0);
+        }
+
+        function timecounter(){
+          var time = sessionStorage.getItem('time');
+          time++;
+          sessionStorage.setItem('time', time);
+        }
+
+        </script>
+</body>
+</html>
