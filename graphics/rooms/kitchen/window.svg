@@ -1,0 +1,33 @@
+<svg width="370" height="499.99999999999994" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="f">
+   <feGaussianBlur stdDeviation="2.71777"/>
+  </filter>
+  <clipPath id="e">
+   <path id="svg_1" fill-opacity="0.85441" fill="#d5f6ff" d="m340.41,191.34l0,400l120,0l0,-400l-120,0zm-140.41,1.0312l0,400l120,0l0,-400l-120,0z"/>
+  </clipPath>
+  <linearGradient y2="0.50001" y1="0.50001" x2="1" x1="0" id="h">
+   <stop offset="0" stop-color="#d5f6ff"/>
+   <stop offset="1" stop-opacity="0" stop-color="#d5f6ff"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="502" width="372" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_13">
+   <path id="svg_2" fill="#87aade" d="m190.40982,49.96051l0,400l120,0l0,-400l-120,0zm-140.41,1.0312l0,400l120,0l0,-400l-120,0z"/>
+   <path id="svg_3" fill="url(#h)" d="m190.40982,49.96051l0,400l120,0l0,-400l-120,0zm-140.41,1.0312l0,400l120,0l0,-400l-120,0z"/>
+   <path id="svg_4" fill="#803300" d="m9.99982,11.00051l0,480l340,0l0,-40l-0.1875,0l0,-400l0.1875,0l0,-40l-340,0zm39.812,40l120.19,0l0,110l-120.19,0l0,-110zm140.19,0l119,0l0,110l-119,0l0,-110zm-140.19,130l120.19,0l0,270l-120.19,0l0,-270zm140.19,0l119,0l0,270l-119,0l0,-270z"/>
+   <path id="svg_5" filter="url(#f)" fill-opacity="0.72031" fill="#5a2400" d="m19.99982,21.00051l0,460l320,0l0,-460l-320,0zm20,20l280,0l0,420l-280,0l0,-420z"/>
+   <path id="svg_7" fill-opacity="0.52107" fill="#1a1a1a" d="m44.99982,46.00051l0,115l5,0l0,-110l120,0l0,-5l-125,0z"/>
+   <path id="svg_8" fill-opacity="0.52107" fill="#1a1a1a" d="m184.99982,46.00051l0,115l4.9571,0l0,-110l118.97,0l0,-5l-123.93,0l0.0029,0z"/>
+   <path id="svg_9" fill-opacity="0.52107" fill="#1a1a1a" d="m44.99982,176.00051l0,275l5,0l0,-270l120,0l0,-5l-125,0z"/>
+   <path id="svg_10" fill-opacity="0.52107" fill="#1a1a1a" d="m184.99982,176.00051l0,275l4.9571,0l0,-275l-4.9571,0zm5.0191,0l0,5l118.91,0l0,-5l-118.91,0z"/>
+   <path id="svg_11" fill="#4b260e" d="m349.99982,11.00051l-10,10l0,470l10,0l0,-480z"/>
+   <path id="svg_12" fill="#4b260e" d="m19.99982,481.00051l-10,10l330,0l0,-10l-320,0z"/>
+  </g>
+ </g>
+</svg>
