@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<svg width="103.39mm" height="297mm" clip-rule="evenodd" fill-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" version="1.1" viewBox="0 0 10487 30125" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+    .fil5 {fill:#2B2A29}
+    .fil4 {fill:#898989}
+    .fil2 {fill:#FECC00}
+    .fil3 {fill:#DFB408}
+    .fil6 {fill:url(#a)}
+    .fil0 {fill:url(#f)}
+    .fil7 {fill:url(#g)}
+    .fil8 {fill:url(#h)}
+    .fil1 {fill:url(#i)}
+  </style>
+  <linearGradient id="a" x1="1044.3" x2="9294.4" y1="18539" y2="18539" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#E73A3F" offset="0"/>
+   <stop stop-color="#B32322" offset=".52157"/>
+   <stop stop-color="#8E241F" offset="1"/>
+  </linearGradient>
+  <linearGradient id="f" x1="1044.3" x2="9294.4" y1="16144" y2="16144" gradientUnits="userSpaceOnUse" xlink:href="#a">
+  </linearGradient>
+  <linearGradient id="g" x1="-52.307" x2="1639.6" y1="11216" y2="11216" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#E73A3F" offset="0"/>
+   <stop stop-color="#E5393D" offset=".52941"/>
+   <stop stop-color="#8E241F" offset="1"/>
+  </linearGradient>
+  <linearGradient id="h" x1="8846.9" x2="10539" y1="17113" y2="17113" gradientUnits="userSpaceOnUse" xlink:href="#a">
+  </linearGradient>
+  <radialGradient id="i">
+   <stop stop-color="#EBECEC" offset="0"/>
+   <stop stop-color="#F5B2B6" offset="1"/>
+  </radialGradient>
+ </defs>
+   <path class="fil0" d="m1044 6521c34-252 449-417 708-470 421-87 913 135 1319 81 557-73 1047-315 1576-332 758-24 1938-20 2645 56 495 54 834 301 1308 396 319 63 687 103 694 269v19990h-8250v-19990z"/>
+   <path class="fil1" d="m1044 6891c85-21 160-71 233-131 3-2 6-4 9-7 153-127 292-296 466-332 421-86 913 135 1319 82 557-74 1047-316 1576-333 758-24 1938-20 2645 56 495 54 834 301 1308 396 319 64 383 189 694 269v1639h-8250v-1639z"/>
+   <path class="fil2" d="m6905 4945c-375 2239-3068 2013-3385 0-272-1721 1128-3297 1692-4945 564 1648 1980 3227 1693 4945z"/>
+   <path class="fil3" d="m6541 5573c-294 1391-2408 1251-2657 0-213-1069 595-2257 1329-3072 733 878 1554 2005 1328 3072z"/>
+   <path class="fil4" d="m6092 5380c0-5-928-193-976 767-16 311 46 630 116 899 20 76 112 88 117 0 16-276-84-543-70-820 47-940 800-542 813-846z"/>
+   <path class="fil5" d="m5135 6560c22 171 58 336 97 486 20 76 112 88 117 0 9-163-22-323-46-483-56 3-112 2-168-3z"/>
+   <path class="fil6" d="m1044 6521c73 30 142 68 210 109 40 24-12 211 27 237 37 25 166-111 203-85 185 128 366 257 574 320 199 60 477-72 677-25 425 100 772 422 1199 465 422 42 924-194 1348-204 567-14 1174 98 1743-5 449-81 859-360 1310-493 319-94 639-201 959-319v22050c0 384-63 402-334 537-2564 1277-5072 1450-7719-52-179-103-190-322-190-541 0-7385-7-14610-7-21994z"/>
+   <path class="fil7" d="m521 7628c445-491 637-850 743-860 15-2 6 71 18 80 14 11 40-3 52 9 81 84 71 355 129 771 177 1272 177 5494 0 6766-177 1273-765 1273-942 0-25-180-502-65-520-346-21-333 418-1077 407-1500-18-673-362-1278-355-2e3 4-447 380-1030 366-1427-21-604-471-860 102-1493z"/>
+   <path class="fil8" d="m9965 12471c-862-1307-764-1746-941 0-177 1745-177 7538 0 9284s764 1746 941 0c25-247 503-90 521-476 21-456-419-1477-407-2058 18-923 361-1754 354-2744-4-614-379-1413-365-1957 21-829 471-1180-103-2049z"/>
+</svg>
