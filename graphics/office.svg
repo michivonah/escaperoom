@@ -1,0 +1,24 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="506.20577" width="674.27436" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_4">
+   <path id="svg_26" d="m207.19616,599.52801l0,-326.30477l-208.49496,326.30477l208.49496,0z" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#84D3DB"/>
+   <rect id="svg_27" height="206.75397" width="598.5" y="392.98175" x="204.20088" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#84D3DB"/>
+  </g>
+  <rect id="svg_14" height="400" width="675" x="125" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#FFDFB8"/>
+  <g id="svg_39">
+   <rect x="0.85534" id="svg_1" height="400" width="126.15592" y="-0.07696" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#FFDFB8"/>
+   <path id="svg_2" d="m-1.12054,399.41938l0,200.00799l128.04828,-200.00799l-128.04828,0z" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#FFDFB8"/>
+  </g>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_32" y2="600" x2="0.4" y1="400" x1="125" fill-opacity="null" stroke-opacity="null" stroke-width="3" stroke="#000" fill="none"/>
+  <line stroke-width="3" stroke-linecap="null" stroke-linejoin="null" id="svg_29" y2="400.00606" x2="125" y1="0.00606" x1="125" stroke-opacity="null" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_33" y2="400" x2="799.59296" y1="399.96001" x1="124.59295" fill-opacity="null" stroke-opacity="null" stroke-width="3" stroke="#000" fill="none"/>
+  <text opacity="0.75" transform="matrix(3.26821, 0, 0, 2.73057, -887.031, -557.535)" font-style="normal" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="23" id="svg_3" y="350.41685" x="413.60795" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">LONDON</text>
+ </g>
+</svg>
