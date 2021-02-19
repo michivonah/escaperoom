@@ -9,34 +9,40 @@
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
          <link rel="stylesheet" type="text/css" href="style.css">
          <meta charset="UTF-8">
-         <meta name="description" content="Spannendes Escape Room Browserspiel.">
+         <meta name="description" content="Sie müssen einen siebenstelligen Zahlencode finden um das Gebäude in möglichst kurzer Zeit zu verlassen.">
          <meta name="keywords" content="Escape, Escape Room, Exit Room, Room, Ausbrechen, Raum, Spiel, Browserspiel, Game, Gaming, Michi, Michi von Ah, von Ah, Freizeit, Schule, Abschlussarbeit, Abschlussprojekt, kostenlos, Pixabay">
          <meta name="author" content="Michi von Ah">
          <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
          <meta property="og:title" content="Michis Escape Room">
-         <meta property="og:description" content="Beschreibung">
+         <meta property="og:description" content="Sie müssen einen siebenstelligen Zahlencode finden um das Gebäude in möglichst kurzer Zeit zu verlassen.">
          <meta property="og:image" content="graphics/media/2.png">
-         <meta property="og:url" content="#">
+         <meta property="og:url" content="escape.michivonah.ch">
          <link rel="manifest" href="manifest.json">
          <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
+        <div id="loading-screen">
+          <div id="loader">
+            <img src="graphics/rooms/kitchen/teddy1.png">
+          </div>
+        </div>
+
         <div id="content">
           <div class="inner-width">
             <div id="header">
               <h1>Michi&prime;s Escape Room</h1>
-              <p>Sie m&uuml;ssen das Geb&auml;ude m&ouml;glichst schnell verlassen. Mit den Pfeilen unten links und rechts k&ouml;nnen sie zwischen den R&auml;en hin und her wechseln. Gegenst&auml;nde k&ouml;nnen durch anklicken eingesammelt oder mit ihnen interagiert werden. Sie m&uuml;ssen den gehemimen Zahlencode rausfinden und am Schluss bei der T&uuml;r eingeben. Geschafft? Sie sehen am Schluss wie lange sie hatten und k&ouml;nnen es erneut versuchen um Ihren Highscore zu verbessern.</p>
+              <p>Sie m&uuml;ssen das Geb&auml;ude m&ouml;glichst schnell verlassen. Mit den Pfeilen unten links und rechts k&ouml;nnen sie zwischen den R&auml;umen hin und her wechseln. Durch anklicken der Gegenständen, können sie mit ihnen interagieren oder sie einsammeln. Sie m&uuml;ssen den <strong>siebenstelligen</strong> geheimen Zahlencode herausfinden und am Schluss bei der T&uuml;r eingeben. Geschafft? Sie sehen am Schluss wie lange sie hatten und k&ouml;nnen es erneut versuchen um Ihren Highscore zu verbessern.</p>
             </div>
             <div id="fullscreen-area">
               <div id="game-container">
-              <iframe src="game.html" title="Escape Room" allowfullscreen="true" scrolling="no">Error, game can&prime;t load.</iframe>
+              <iframe id="game-frame" src="game.html" title="Escape Room" allowfullscreen="true" scrolling="no">Error, game can&prime;t load.</iframe>
             </div>
             <div id="gameplay-options">
               <button id="share-btn"><i class="fas fa-share-alt"></i></button>
               <button id="reload-btn" onclick="reloadGame()"><i class="fas fa-redo"></i></button>
-              <button id="fullscreen-btn" onclick="fullscreen()"><i class="fas fa-expand"></i></button>
+              <button id="fullscreen-btn" onclick="toggleFullscreen()"><i class="fas fa-expand"></i></button>
             </div>
             </div>
           </div>
@@ -50,18 +56,46 @@
         <script>
         // Loading
         $(window).on("load", function(){
-          //$("#loading-screen").fadeOut(750);
+          $("#loading-screen").fadeOut(800);
           console.log("Page loaded.");
         });
 
         function fullscreen(){
           var game = document.getElementById("fullscreen-area");
-          //game.style.padding = "40px";
+          var gameFrame = document.getElementById("game-frame");
+          game.style.paddingTop = "15vh";
+          //gameFrame.style.maxWidth = "800px";
+          //gameFrame.style.maxHeight = "600px";
+          gameFrame.style.width = "100vw";
           if(game.requestFullscreen){
             game.requestFullscreen();
           }
           else if(game.webkitRequestFullscreen){
             game.webkitRequestFullscreen();
+          }
+        }
+
+        function closeFullscreen(){
+          var game = document.getElementById("fullscreen-area");
+          var gameFrame = document.getElementById("game-frame");
+          game.style.paddingTop = "0";
+          gameFrame.style.width = "80%";
+          if(document.exitFullscreen){
+            document.exitFullscreen();
+          }
+          else if(document.webkitExitFullscreen){
+            document.webkitExitFullscreen();
+          }
+        }
+
+        function toggleFullscreen(){
+          if(document.fullscreen == false){
+            fullscreen();
+            console.log('Fullscreen opened')
+          }
+          else{
+            closeFullscreen();
+            console.log('Fullscreen closed')
           }
         }
 
