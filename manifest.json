@@ -1,0 +1,32 @@
+{
+  "name": "Michis Escape Room",
+  "short_name": "Escape Room",
+  "description": "Sie müssen einen siebenstelligen Zahlencode finden um das Gebäude in möglichst kurzer Zeit zu verlassen.",
+  "lang": "de-DE",
+  "orientation": "any",
+  "theme_color": "#e67e22",
+  "background_color": "#e67e22",
+  "start_url": "https://escape.michivonah.ch",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "https://escape.michivonah.ch/graphics/media/1.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "https://escape.michivonah.ch/graphics/media/1.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "https://escape.michivonah.ch/graphics/media/1.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://escape.michivonah.ch/graphics/media/1.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
