@@ -9,6 +9,26 @@ html{scroll-behavior: smooth;}
      font-family: "Open Sans", sans-serif;
    }
 
+   #loading-screen{
+     margin: 0;
+     width: 100%;
+     height: 100vh;
+     overflow: hidden;
+     position: fixed;
+     top: 0;
+     left: 0;
+     background: #e67e22;
+     text-align: center;
+   }
+
+   #loader img{
+     width: 80%;
+     max-width: 200px;
+     height: auto;
+     margin-top: 30vh;
+     animation: loading 4s infinite;
+   }
+
    #game{
      margin: 0;
      user-select: none;
@@ -84,10 +104,10 @@ html{scroll-behavior: smooth;}
      margin-left: 10%;
      width: 80%;
      height: auto;
-     background: #f9f9f9;
-     color: #000;
+     background: #e67e22;
+     color: #fff;
      font-size: 24px;
-     border: 4px solid #000;
+     border: 4px solid #fff;
      border-radius: 8px;
      outline: none;
    }
@@ -218,13 +238,28 @@ html{scroll-behavior: smooth;}
      border: none;
      border-radius: 50%;
      margin: 15px;
-     right: 0;
-     top: 0;
      color: #fff;
      background: #e67e22;
      float: right;
      position: fixed;
      outline: none;
+   }
+
+   #mute-btn{
+     right: 0;
+     top: 0;
+   }
+
+   #help-btn{
+     right: 0;
+     bottom: 71px;
+     display: none;
+   }
+
+   @keyframes loading{
+     to{
+       transform: rotate(720deg);
+     }
    }
 
    ::selection {background: #5499c7; color: #ffffff;}
