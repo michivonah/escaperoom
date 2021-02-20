@@ -89,7 +89,7 @@
               <button onclick="playgame()">Start</button>
               <button onclick="createNewWindow('Quellen', 'sources')">Quellen</button>
               <button style="display: none;">Schliessen</button>
-              <p style="font-size: 12px; position: absolute; bottom: 0; margin-left: 10px;">Version 1.1.1</p>
+              <p style="font-size: 12px; position: absolute; bottom: 0; margin-left: 10px;">Version 1.1.2</p>
             </div>
           </div>
 
@@ -314,24 +314,6 @@
           document.getElementById('puzzleWindowContainer').innerHTML = '';
         }
 
-        function addEvListenerToWindow(){
-          document.getElementsByClassName('closeWindowBtn')[0].addEventListener("click", function(){
-            playAudio('sounds/click-sound2.mp3');
-            console.log(event.target.id)
-            /*sessionStorage.setItem('yourInput1', document.getElementById('newInput1').value);
-            sessionStorage.setItem('yourInput2', document.getElementById('newInput2').value);
-            sessionStorage.setItem('yourInput3', document.getElementById('newInput3').value);
-            sessionStorage.setItem('yourInput4', document.getElementById('newInput4').value);
-            sessionStorage.setItem('yourInput5', document.getElementById('newInput5').value);
-            sessionStorage.setItem('yourInput6', document.getElementById('newInput6').value);
-            sessionStorage.setItem('yourInput7', document.getElementById('newInput7').value);
-            sessionStorage.setItem('yourTextarea', document.getElementById('yourTextarea').value);*/
-            document.getElementsByClassName('puzzleWindow')[0].style.display = "none";
-            document.getElementsByClassName('puzzleWindow')[0].remove();
-            console.log("Window removed.");
-          });
-          console.log("Event Listener added to new window.");
-        }
 
         function createNewWindow(title, windowtype, content){
           if(document.getElementsByClassName('closeWindowBtn')[0] == null){
@@ -565,7 +547,31 @@
               newWindow.style.border = "8px solid #fff";
             }
             document.getElementById("puzzleWindowContainer").appendChild(newWindow);
-            addEvListenerToWindow();
+            // add event listener
+            if(windowtype == "keypad"){
+              newCloseBtn.addEventListener("click", function(){
+                playAudio('sounds/click-sound2.mp3');
+                sessionStorage.setItem('yourInput1', document.getElementById('newInput1').value);
+                sessionStorage.setItem('yourInput2', document.getElementById('newInput2').value);
+                sessionStorage.setItem('yourInput3', document.getElementById('newInput3').value);
+                sessionStorage.setItem('yourInput4', document.getElementById('newInput4').value);
+                sessionStorage.setItem('yourInput5', document.getElementById('newInput5').value);
+                sessionStorage.setItem('yourInput6', document.getElementById('newInput6').value);
+                sessionStorage.setItem('yourInput7', document.getElementById('newInput7').value);
+                sessionStorage.setItem('yourTextarea', document.getElementById('yourTextarea').value);
+                document.getElementsByClassName('puzzleWindow')[0].style.display = "none";
+                document.getElementsByClassName('puzzleWindow')[0].remove();
+                console.log("Window removed.");
+              });
+            }
+            else{
+              newCloseBtn.addEventListener("click", function(){
+                playAudio('sounds/click-sound2.mp3');
+                document.getElementsByClassName('puzzleWindow')[0].style.display = "none";
+                document.getElementsByClassName('puzzleWindow')[0].remove();
+                console.log("Window removed.");
+              });
+            }
             console.log("New window with title " + title + " created.");
           }
           console.log("Close the open window, before you can open another.")
