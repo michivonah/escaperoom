@@ -15,7 +15,7 @@
          <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
          <meta property="og:title" content="Michis Escape Room">
          <meta property="og:description" content="Sie müssen einen siebenstelligen Zahlencode finden um das Gebäude in möglichst kurzer Zeit zu verlassen.">
-         <meta property="og:image" content="graphics/media/2.png">
+         <meta property="og:image" content="https://escape.michivonah.ch/graphics/media/2.png">
          <meta property="og:url" content="escape.michivonah.ch">
          <link rel="manifest" href="manifest.json">
          <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -33,14 +33,14 @@
           <div class="inner-width">
             <div id="header">
               <h1>Michi&prime;s Escape Room</h1>
-              <p>Sie m&uuml;ssen das Geb&auml;ude m&ouml;glichst schnell verlassen. Mit den Pfeilen unten links und rechts k&ouml;nnen sie zwischen den R&auml;umen hin und her wechseln. Durch anklicken der Gegenständen, können sie mit ihnen interagieren oder sie einsammeln. Sie m&uuml;ssen den <strong>siebenstelligen</strong> geheimen Zahlencode herausfinden und am Schluss bei der T&uuml;r eingeben. Geschafft? Sie sehen am Schluss wie lange sie hatten und k&ouml;nnen es erneut versuchen um Ihren Highscore zu verbessern.</p>
+              <p>Sie m&uuml;ssen das Geb&auml;ude m&ouml;glichst schnell verlassen. Mit den Pfeilen unten links und rechts k&ouml;nnen sie zwischen den R&auml;umen hin und her wechseln. Durch anklicken einiger Gegenständen, können sie mit ihnen interagieren oder sie einsammeln. Sie m&uuml;ssen den <strong>siebenstelligen</strong> geheimen Zahlencode herausfinden und am Schluss bei der T&uuml;r eingeben. Die Zahlen sind versteckt halten sie also Ihre Augen gut offen. Geschafft? Sie sehen am Schluss wie lange sie hatten und k&ouml;nnen es erneut versuchen um Ihre Zeit zu verbessern.</p>
             </div>
             <div id="fullscreen-area">
               <div id="game-container">
               <iframe id="game-frame" src="game.html" title="Escape Room" allowfullscreen="true" scrolling="no">Error, game can&prime;t load.</iframe>
             </div>
             <div id="gameplay-options">
-              <button id="share-btn"><i class="fas fa-share-alt"></i></button>
+              <button id="share-btn" onclick="share()"><i class="fas fa-share-alt"></i></button>
               <button id="reload-btn" onclick="reloadGame()"><i class="fas fa-redo"></i></button>
               <button id="fullscreen-btn" onclick="toggleFullscreen()"><i class="fas fa-expand"></i></button>
             </div>
@@ -100,7 +100,13 @@
         }
 
         function reloadGame(){
-          location.reload();
+          //location.reload();
+          var gameFrame = document.getElementById("game-frame");
+          gameFrame.src = gameFrame.src;
+        }
+
+        function share(){
+          window.open('https://escape.michivonah.ch/graphics/media/qrcode-escaperoom.png');
         }
         </script>
 </body>
