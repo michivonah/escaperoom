@@ -1,7 +1,7 @@
 # escaperoom
 
 ## Changelog
-# Version 1.1.1
+### Version 1.1.1
 - some improved graphics
 - timecount bug fixed
 - new tips with sequence
