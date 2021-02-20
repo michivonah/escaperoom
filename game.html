@@ -317,14 +317,15 @@
         function addEvListenerToWindow(){
           document.getElementsByClassName('closeWindowBtn')[0].addEventListener("click", function(){
             playAudio('sounds/click-sound2.mp3');
-            sessionStorage.setItem('yourInput1', document.getElementById('newInput1').value);
+            console.log(event.target.id)
+            /*sessionStorage.setItem('yourInput1', document.getElementById('newInput1').value);
             sessionStorage.setItem('yourInput2', document.getElementById('newInput2').value);
             sessionStorage.setItem('yourInput3', document.getElementById('newInput3').value);
             sessionStorage.setItem('yourInput4', document.getElementById('newInput4').value);
             sessionStorage.setItem('yourInput5', document.getElementById('newInput5').value);
             sessionStorage.setItem('yourInput6', document.getElementById('newInput6').value);
             sessionStorage.setItem('yourInput7', document.getElementById('newInput7').value);
-            sessionStorage.setItem('yourTextarea', document.getElementById('yourTextarea').value);
+            sessionStorage.setItem('yourTextarea', document.getElementById('yourTextarea').value);*/
             document.getElementsByClassName('puzzleWindow')[0].style.display = "none";
             document.getElementsByClassName('puzzleWindow')[0].remove();
             console.log("Window removed.");
