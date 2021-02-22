@@ -3,10 +3,13 @@ html{scroll-behavior: smooth;}
    body{
      margin: 0;
      padding: 0;
-     color: #000;
-     background: #f8f8f8;
+     color: var(--color);
+     background: var(--background);
      text-align: center;
      font-family: "Open Sans", sans-serif;
+     --color: #000;
+     --background: #f8f8f8;
+     --theme: #e67e22;
    }
 
    #loading-screen{
@@ -17,7 +20,7 @@ html{scroll-behavior: smooth;}
      position: fixed;
      top: 0;
      left: 0;
-     background: #e67e22;
+     background: var(--theme);
      text-align: center;
    }
 
@@ -66,7 +69,7 @@ html{scroll-behavior: smooth;}
      border-radius: 50%;
      margin: 10px;
      color: #fff;
-     background: #e67e22;
+     background: var(--theme);
      outline: none;
    }
 
@@ -102,5 +105,5 @@ html{scroll-behavior: smooth;}
      }
    }
 
-   ::selection {background: #e67e22; color: #ffffff;}
-   ::-moz-selection {background: #e67e22; color: #ffffff;}
+   ::selection {background: var(--theme); color: #ffffff;}
+   ::-moz-selection {background: var(--theme); color: #ffffff;}
