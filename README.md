@@ -1,6 +1,11 @@
 # escaperoom
 
 ## Changelog
+### Version 1.1.3
+- music auto start
+- play again button
+- bug fixes
+
 ### Version 1.1.2
 - important bug fix (closing windows)
 
