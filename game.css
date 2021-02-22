@@ -88,6 +88,18 @@ html{scroll-behavior: smooth;}
      font-size: 36px;
    }
 
+   #congrats button{
+     margin: 0px;
+     width: 60%;
+     height: auto;
+     background: #e67e22;
+     color: #fff;
+     font-size: 24px;
+     border: 4px solid #fff;
+     border-radius: 8px;
+     outline: none;
+   }
+
    #startscreen{
      background-image: url("graphics/congrats/rooms-gif.gif");
      background-repeat: no-repeat;
@@ -141,7 +153,7 @@ html{scroll-behavior: smooth;}
    #backpack img{
      width: auto;
      max-width: 66px;
-     height: 46px;
+     min-height: 26px;
      max-height: 46px;
      margin: 5px;
      position: static;
@@ -286,6 +298,11 @@ html{scroll-behavior: smooth;}
      bottom: 71px;
      display: none;
      z-index: 800;
+   }
+
+   button:hover{
+     filter: grayscale(50%);
+     cursor: pointer;
    }
 
    @keyframes loading{
