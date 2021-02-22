@@ -81,6 +81,7 @@
               <p id="hintcounter">Hinweise: error</p>
               <img src="graphics/rooms/congrats/balloons.svg" draggable="false" style="position:absolute; top: 60vh; left: 75%; width:120px;">
               <p>Wenn sie es nochmal versuchen wollen, um eine bessere Zeit aufzustellen, klicken sie unten auf den Reload Knopf. Bis nachher</p>
+              <button onclick="location.reload();">Nochmals spielen</button>
               <h3>Michi</h3>
             </div>
             <div id="startscreen" class="room" style="display: block;">
@@ -89,7 +90,7 @@
               <button onclick="playgame()">Start</button>
               <button onclick="createNewWindow('Quellen', 'sources')">Quellen</button>
               <button style="display: none;">Schliessen</button>
-              <p style="font-size: 12px; position: absolute; bottom: 0; margin-left: 10px;">Version 1.1.2</p>
+              <p style="font-size: 12px; position: absolute; bottom: 0; margin-left: 10px;">Version 1.1.3</p>
             </div>
           </div>
 
@@ -357,12 +358,34 @@
               var newImage = document.createElement('img');
               var newInput = document.createElement('input');
               var newButton = document.createElement('button');
-              newImage.src = content;
+              if(sessionStorage.getItem('calendar1') == 1){
+                newImage.src = "graphics/rooms/kitchen/calendar-correct.png";
+              }
+              else{
+                newImage.src = content;
+              }
               newImage.draggable = false;
               newImage.style.height = "40vw";
               newInput.type = "text";
               newInput.placeholder = "Was ist die Hauptstadt von Alaska?";
               newInput.id = "calendarInput";
+              newInput.addEventListener("keyup", function(){
+                $(newInput).on("keyup", function(e){
+                  if(e.keyCode == 13){
+                    //playAudio('sounds/click-sound2.mp3');
+                    if(newInput.value.toUpperCase().includes('JUNEAU')){
+                      console.log('Answer ' + newInput.value + ' is correct!')
+                      newInput.value = "";
+                      newImage.src = "graphics/rooms/kitchen/calendar-correct.png";
+                      sessionStorage.setItem('calendar1', 1);
+                    }
+                    else{
+                      console.log('Answer ' + newInput.value + ' is incorrect!')
+                      newInput.value = "";
+                    }
+                  }
+                });
+              });
               newButton.textContent = "✔️";
               newButton.addEventListener("click", function(){
                 playAudio('sounds/click-sound2.mp3');
@@ -370,6 +393,7 @@
                   console.log('Answer ' + newInput.value + ' is correct!')
                   newInput.value = "";
                   newImage.src = "graphics/rooms/kitchen/calendar-correct.png";
+                  sessionStorage.setItem('calendar1', 1);
                 }
                 else{
                   console.log('Answer ' + newInput.value + ' is incorrect!')
@@ -385,54 +409,96 @@
               newImage.src = content;
               newImage.style.height = "40vw";
               var newInput1 = document.createElement('input');
-              newInput1.type = "number";
+              newInput1.type = "numbers";
               newInput1.required = true;
-              newInput1.maxlenght = 1;
+              newInput1.maxLength = "1";
               newInput1.placeholder = "0";
               newInput1.id = "newInput1";
               newInput1.value = sessionStorage.getItem('yourInput1');
+              newInput1.addEventListener("keyup", function(){
+                if(newInput1.value.length == '1'){
+                  newInput2.focus();
+                }
+                console.log("Go to next input field.");
+              });
               var newInput2 = document.createElement('input');
-              newInput2.type = "number";
+              newInput2.type = "numbers";
               newInput2.required = true;
-              newInput2.maxlenght = 1;
+              newInput2.maxLength = "1";
               newInput2.placeholder = "0";
               newInput2.id = "newInput2";
               newInput2.value = sessionStorage.getItem('yourInput2');
+              newInput2.addEventListener("keyup", function(){
+                if(newInput2.value.length == '1'){
+                  newInput3.focus();
+                }
+                console.log("Go to next input field.");
+              });
               var newInput3 = document.createElement('input');
-              newInput3.type = "number";
+              newInput3.type = "numbers";
               newInput3.required = true;
-              newInput3.maxlenght = 1;
+              newInput3.maxLength = "1";
               newInput3.placeholder = "0";
               newInput3.id = "newInput3";
               newInput3.value = sessionStorage.getItem('yourInput3');
+              newInput3.addEventListener("keyup", function(){
+                if(newInput3.value.length == '1'){
+                  newInput4.focus();
+                }
+                console.log("Go to next input field.");
+              });
               var newInput4 = document.createElement('input');
-              newInput4.type = "number";
+              newInput4.type = "numbers";
               newInput4.required = true;
-              newInput4.maxlenght = 1;
+              newInput4.maxLength = "1";
               newInput4.placeholder = "0";
               newInput4.id = "newInput4";
               newInput4.value = sessionStorage.getItem('yourInput4');
+              newInput4.addEventListener("keyup", function(){
+                if(newInput4.value.length == '1'){
+                  newInput5.focus();
+                }
+                console.log("Go to next input field.");
+              });
               var newInput5 = document.createElement('input');
-              newInput5.type = "number";
+              newInput5.type = "numbers";
               newInput5.required = true;
-              newInput5.maxlenght = 1;
+              newInput5.maxLength = "1";
               newInput5.placeholder = "0";
               newInput5.id = "newInput5";
               newInput5.value = sessionStorage.getItem('yourInput5');
+              newInput5.addEventListener("keyup", function(){
+                if(newInput5.value.length == '1'){
+                  newInput6.focus();
+                }
+                console.log("Go to next input field.");
+              });
               var newInput6 = document.createElement('input');
-              newInput6.type = "number";
+              newInput6.type = "numbers";
               newInput6.required = true;
-              newInput6.maxlenght = 1;
+              newInput6.maxLength = "1";
               newInput6.placeholder = "0";
               newInput6.id = "newInput6";
               newInput6.value = sessionStorage.getItem('yourInput6');
+              newInput6.addEventListener("keyup", function(){
+                if(newInput6.value.length == '1'){
+                  newInput7.focus();
+                }
+                console.log("Go to next input field.");
+              });
               var newInput7 = document.createElement('input');
-              newInput7.type = "number";
+              newInput7.type = "numbers";
               newInput7.required = true;
-              newInput7.maxlenght = 1;
+              newInput7.maxLength = "1";
               newInput7.placeholder = "0";
               newInput7.id = "newInput7";
               newInput7.value = sessionStorage.getItem('yourInput7');
+              newInput7.addEventListener("keyup", function(){
+                if(newInput7.value.length == '1'){
+                  newButton.focus();
+                }
+                console.log("Go to next input field.");
+              });
               var newButton = document.createElement('button');
               newButton.textContent = "✔️";
               newButton.addEventListener("click", function(){
@@ -649,6 +715,16 @@
             bgMusicPlayer.muted = true;
             document.getElementById('mute-btn-i').className = "fas fa-volume-mute";
           }
+
+          if(type == 'on'){
+            document.getElementById('bg-music-player').play();
+            bgMusicPlayer.muted = false;
+            document.getElementById('mute-btn-i').className = "fas fa-volume-up";
+          }
+          else if(type == 'off'){
+            bgMusicPlayer.muted = true;
+            document.getElementById('mute-btn-i').className = "fas fa-volume-mute";
+          }
         }
 
         function playgame(){
@@ -656,13 +732,18 @@
           document.getElementById("room2").style.display = "none";
           document.getElementById("room3").style.display = "none";
           document.getElementById("room4").style.display = "none";
+          document.getElementById("startscreen").style.display = "none";
+          document.getElementById("congrats").style.display = "none";
           document.getElementById("backpack").style.display = "block";
           document.getElementById('controlButtons').style.display = "block";
           document.getElementById('help-btn').style.display = "block";
+          document.getElementById('bg-music-player').src = "sounds/background-music3.mp3";
           document.getElementById('bg-music-player').play();
+          toggleMusic('on');
           sessionStorage.setItem('time', 0);
           sessionStorage.setItem('hints', 0);
           sessionStorage.setItem('wateringcan', 0);
+          sessionStorage.setItem('calendar1', 0);
           sessionStorage.removeItem('yourInput1');
           sessionStorage.removeItem('yourInput2');
           sessionStorage.removeItem('yourInput3');
