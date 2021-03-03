@@ -125,6 +125,11 @@ html{scroll-behavior: smooth;}
      outline: none;
    }
 
+   #startscreen img{
+     width: 90%;
+     max-width: 450px;
+   }
+
    .room{
      display: none;
      width: 100%;
@@ -335,6 +340,50 @@ html{scroll-behavior: smooth;}
      to{
        top: 72vh;
        left: 76%;
+     }
+   }
+
+   @media screen and (max-height:550px){
+     #backpack{
+       width: 100%;
+       height: auto;
+       min-height: 36px;
+       max-height: 36px;
+     }
+
+     #backpack img{
+       width: auto;
+       max-width: 49.5px;
+       min-height: 19.5px;
+       max-height: 34.5px;
+     }
+
+     .backpack-btn{
+       font-size: 22px;
+       margin: 5px;
+       color: #000;
+     }
+
+     .controlbutton{
+       height: 36px;
+       width: 36px;
+       font-size: 14px;
+       margin: 15px;
+     }
+
+     #mute-btn{
+       right: 0;
+       top: 0;
+     }
+
+     #help-btn{
+       left: 0;
+       top: 0;
+     }
+
+     #startscreen img{
+       width: auto;
+       height: 50vh;
      }
    }
 
