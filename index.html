@@ -33,7 +33,7 @@
           <div class="inner-width">
             <div id="header">
               <h1>Michi&prime;s Escape Room</h1>
-              <p>Sie m&uuml;ssen das Geb&auml;ude m&ouml;glichst schnell verlassen. Mit den Pfeilen unten links und rechts k&ouml;nnen sie zwischen den R&auml;umen hin und her wechseln. Durch anklicken einiger Gegenständen, können sie mit ihnen interagieren oder sie einsammeln. Sie m&uuml;ssen den <strong>siebenstelligen</strong> geheimen Zahlencode herausfinden und am Schluss bei der T&uuml;r eingeben. Die Zahlen sind versteckt halten sie also Ihre Augen gut offen. Geschafft? Sie sehen am Schluss wie lange sie hatten und k&ouml;nnen es erneut versuchen um Ihre Zeit zu verbessern.</p>
+              <p id="descripion">Sie m&uuml;ssen das Geb&auml;ude m&ouml;glichst schnell verlassen. Mit den Pfeilen unten links und rechts k&ouml;nnen sie zwischen den R&auml;umen hin und her wechseln. Durch anklicken einiger Gegenständen, können sie mit ihnen interagieren oder sie einsammeln. Sie m&uuml;ssen den <strong>siebenstelligen</strong> geheimen Zahlencode herausfinden und am Schluss bei der T&uuml;r eingeben. Die Zahlen sind versteckt halten sie also Ihre Augen gut offen. Geschafft? Sie sehen am Schluss wie lange sie hatten und k&ouml;nnen es erneut versuchen um Ihre Zeit zu verbessern.</p>
             </div>
             <div id="fullscreen-area">
               <div id="game-container">
@@ -42,7 +42,7 @@
             <div id="gameplay-options">
               <button id="share-btn" onclick="share()"><i class="fas fa-share-alt"></i></button>
               <button id="reload-btn" onclick="reloadGame()"><i class="fas fa-redo"></i></button>
-              <button id="fullscreen-btn" onclick="toggleFullscreen()"><i class="fas fa-expand"></i></button>
+              <button id="fullscreen-btn" onclick="toggleFullscreen()"><i class="fas fa-expand" id="fullscreen-icon"></i></button>
             </div>
             </div>
           </div>
@@ -50,7 +50,7 @@
 
         <div id="screensize-error">
           <i class="fas fa-times-circle"></i>
-          <h1>Ihr Bildschirm ist zu klein um das Spiel zu spielen. Der Bildschirm benötigt mindestens eine Breite von 1100px um das Spiel fehlerfrei darzustellen.</h1>
+          <h1>Bitte drehen Sie das Gerät um das Spiel zu spielen. Das Spiel unterstützt nur das Querformat.</h1>
         </div>
 
         <script>
@@ -69,10 +69,17 @@
         function fullscreen(){
           var game = document.getElementById("fullscreen-area");
           var gameFrame = document.getElementById("game-frame");
-          game.style.paddingTop = "15vh";
-          //gameFrame.style.maxWidth = "800px";
-          //gameFrame.style.maxHeight = "600px";
+          var fullScreenBtn = document.getElementById('fullscreen-btn');
+          var fullScreenBtnIcon = document.getElementById('fullscreen-icon');
+          //game.style.paddingTop = "15vh";
+          gameFrame.style.maxWidth = "calc(100vw * 0.75)";
+          gameFrame.style.maxHeight = "calc(100vw * 0.6)";
           gameFrame.style.width = "100vw";
+          gameFrame.style.height = "100vh";
+          fullScreenBtn.style.position = "absolute";
+          fullScreenBtn.style.bottom = "15px";
+          fullScreenBtn.style.right = "15px";
+          fullScreenBtnIcon.className = "fas fa-compress";
           if(game.requestFullscreen){
             game.requestFullscreen();
           }
@@ -84,8 +91,15 @@
         function closeFullscreen(){
           var game = document.getElementById("fullscreen-area");
           var gameFrame = document.getElementById("game-frame");
-          game.style.paddingTop = "0";
+          var fullScreenBtn = document.getElementById('fullscreen-btn');
+          var fullScreenBtnIcon = document.getElementById('fullscreen-icon');
+          //game.style.paddingTop = "0";
+          gameFrame.style.maxWidth = "calc(1100px * 0.8)";
+          gameFrame.style.maxHeight = "calc(1100px * 0.6)";
           gameFrame.style.width = "80%";
+          gameFrame.style.height = "60vw";
+          fullScreenBtn.style.position = "static";
+          fullScreenBtnIcon.className = "fas fa-expand";
           if(document.exitFullscreen){
             document.exitFullscreen();
           }
