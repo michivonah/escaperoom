@@ -1,6 +1,11 @@
 # escaperoom
 
 ## Changelog
+### Version 1.2.0
+- support for mobile devices
+- new sounds
+- small other changes
+
 ### Version 1.1.3
 - music auto start
 - play again button
