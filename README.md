@@ -1,7 +1,7 @@
-# escaperoom
+# Michi's Escape Room
 
 ## Changelog
-### Version 1.2.0
+### Version 1.2.0 (3 march)
 - support for mobile devices
 - new sounds
 - small other changes
