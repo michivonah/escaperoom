@@ -1,6 +1,10 @@
 # Michi's Escape Room
 
 ## Changelog
+### Version 1.2.1 (5 march)
+- variable fruitbowls
+- added tutorial to homescreen
+
 ### Version 1.2.0 (3 march)
 - support for mobile devices
 - new sounds
