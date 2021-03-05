@@ -15,6 +15,7 @@
          <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
          <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 
+
 </head>
 <body onload="window.setInterval('timecounter()',1000)" oncontextmenu="return false;">
 
@@ -59,7 +60,7 @@
               <img id="item-chair3" src="graphics/rooms/kitchen/chair.png" draggable="false" style="position:absolute; top: 77vh; left: 79%; width:12.5%; z-index: 72;">
               <img id="item-teddy1" src="graphics/rooms/kitchen/teddy3.png" draggable="false" onclick="toggleBackpack(); document.getElementById('item-officechair1').src = 'graphics/rooms/office/officechair-teddy.png'; document.getElementById('item-teddy1').src = 'graphics/rooms/kitchen/teddy1.png';" style="position:absolute; top: 53vh; left: 56%; width:10.795%; z-index: 70;">
               <img id="item-calendar1" src="graphics/rooms/kitchen/calendar.png" onclick="createNewWindow('Der Rätselkalender', 'calendarquiz', 'graphics/rooms/kitchen/calendar2.png')" draggable="false" style="position:absolute; top: 24vh; left: 72%; width:11.36%;">
-              <img id="item-fruitbowl1" src="graphics/rooms/kitchen/fruitbowl.png" draggable="false" onclick="createNewWindow('Komische Buchstaben auf der Schüssel', 'zoom')" style="position:absolute; top: 59vh; left: 67%; width:9.09%; z-index: 75;">
+              <img id="item-fruitbowl1" src="graphics/rooms/kitchen/fruitbowl1.png" draggable="false" onclick="createNewWindow('Komische Buchstaben auf der Schüssel', 'zoom')" style="position:absolute; top: 59vh; left: 67%; width:9.09%; z-index: 75;">
               <img id="item-radio1" src="graphics/rooms/kitchen/radio.png" draggable="false" onclick="playAudio('sounds/radio-quiz.mp3')" style="position:absolute; top: 52vh; left: 80%; width:7.95%; z-index: 74;">
               <img id="item-window2" src="graphics/rooms/kitchen/window.svg" draggable="false" style="position:absolute; top: 6%; left: 35%; width:15.909%;">
               <img id="item-pan1" src="graphics/rooms/kitchen/pan.png" draggable="false" onclick="createNewWindow('Die verbrannte Pfanne', 'image', 'graphics/rooms/kitchen/pan.png')" style="position:absolute; top: 35vh; left: 25%; width:9.659%; z-index: 76;">
@@ -87,10 +88,10 @@
             <div id="startscreen" class="room" style="display: block;">
               <h1>Michi&prime;s Escape Room</h1>
               <img src="graphics/media/1.png" draggable="false">
-              <button onclick="playgame()">Start</button>
+              <button onclick="playgame()" id="start-btn">Start</button>
+              <button onclick="createNewWindow('Anleitung', 'tutorial')">Anleitung</button>
               <button onclick="createNewWindow('Quellen', 'sources')">Quellen</button>
-              <button style="display: none;">Schliessen</button>
-              <p style="font-size: 12px; position: absolute; bottom: 0; margin-left: 10px;">Version 1.2.0</p>
+              <p style="font-size: 12px; position: absolute; bottom: 0; margin-left: 10px;">Version 1.2.1</p>
             </div>
           </div>
 
@@ -124,6 +125,7 @@
           $("#loading-screen").fadeOut(750);
           console.log("Page loaded.");
         });
+
 
         // keyboard
         // next room key 39
@@ -236,7 +238,19 @@
               if(roomName == "room3"){
                 playAudio('sounds/click-sound2.mp3');
                 document.getElementById('item-apple1').remove();
-                createNewWindow('Komische Buchstaben auf der Schüssel', 'image', 'graphics/rooms/kitchen/fruitbowl.png');
+                // get the correct fruitbowl image
+                if(sessionStorage.getItem('fruitbowlNumber') == "1"){
+                  createNewWindow('Komische Buchstaben auf der Schüssel', 'image', 'graphics/rooms/kitchen/fruitbowl1.png');
+                }
+                else if(sessionStorage.getItem('fruitbowlNumber') == "2"){
+                  createNewWindow('Komische Buchstaben auf der Schüssel', 'image', 'graphics/rooms/kitchen/fruitbowl2.png');
+                }
+                else if(sessionStorage.getItem('fruitbowlNumber') == "3"){
+                  createNewWindow('Komische Buchstaben auf der Schüssel', 'image', 'graphics/rooms/kitchen/fruitbowl3.png');
+                }
+                else if(sessionStorage.getItem('fruitbowlNumber') == "4"){
+                  createNewWindow('Komische Buchstaben auf der Schüssel', 'image', 'graphics/rooms/kitchen/fruitbowl4.png');
+                }
               }
             }
           }
@@ -504,8 +518,26 @@
               newButton.textContent = "✔️";
               newButton.addEventListener("click", function(){
                 playAudio('sounds/click-sound2.mp3');
+                // get correct code
+                if(sessionStorage.getItem('fruitbowlNumber') == "1"){
+                  var code1 = "1596742";
+                  var code2 = "1597642";
+                }
+                else if(sessionStorage.getItem('fruitbowlNumber') == "2"){
+                  var code1 = "2467951";
+                  var code2 = "2476951";
+                }
+                else if(sessionStorage.getItem('fruitbowlNumber') == "3"){
+                  var code1 = "1267549";
+                  var code2 = "1276549";
+                }
+                else if(sessionStorage.getItem('fruitbowlNumber') == "4"){
+                  var code1 = "6751249";
+                  var code2 = "7651249";
+                }
+                // check with your code
                 var yourCode = newInput1.value.toString() + newInput2.value.toString() + newInput3.value.toString() + newInput4.value.toString() + newInput5.value.toString() + newInput6.value.toString() + newInput7.value.toString();
-                if(yourCode.toUpperCase().includes('1596742') || yourCode.toUpperCase().includes('1597642')){
+                if(yourCode.toUpperCase().includes(code1) || yourCode.toUpperCase().includes(code2)){
                   console.log('Answer ' + newInput1.value + ' is correct!')
                   newInput1.value = "";
                   newInput2.value = "";
@@ -614,6 +646,14 @@
               newWindow.style.color = "#fff";
               newWindow.style.border = "8px solid #fff";
             }
+            else if(windowtype == "tutorial"){
+              var newText = document.createElement('p');
+              newText.textContent = "Sie müssen das Gebäude möglichst schnell verlassen. Mit den Pfeilen unten links und rechts können sie zwischen den Räumen hin und her wechseln. Durch anklicken einiger Gegenständen, können sie mit ihnen interagieren oder sie einsammeln. Sie müssen den siebenstelligen geheimen Zahlencode herausfinden und am Schluss bei der Tür eingeben. Die Zahlen sind versteckt halten sie also Ihre Augen gut offen. Geschafft? Sie sehen am Schluss wie lange sie hatten und können es erneut versuchen um Ihre Zeit zu verbessern.";
+              newWindow.appendChild(newText);
+              newWindow.style.background = "#e67e22";
+              newWindow.style.color = "#fff";
+              newWindow.style.border = "8px solid #fff";
+            }
             document.getElementById("puzzleWindowContainer").appendChild(newWindow);
             // add event listener
             if(windowtype == "keypad"){
@@ -653,6 +693,7 @@
         }
 
         function playAudio(source){
+          var bgPlayer = document.getElementById('bg-music-player');
           var audioplayer = document.getElementById('audio-player');
           var item = event.target.id;
           //document.getElementById(item).remove();
@@ -755,6 +796,10 @@
           sessionStorage.removeItem('yourInput6');
           sessionStorage.removeItem('yourInput7');
           sessionStorage.removeItem('yourTextarea');
+          var fruitbowl = document.getElementById('item-fruitbowl1');
+          var fruitbowlNumber = Math.round(Math.random() * (4 - 1)) + 1;
+          sessionStorage.setItem('fruitbowlNumber', fruitbowlNumber);
+          fruitbowl.src = "graphics/rooms/kitchen/fruitbowl" + fruitbowlNumber + ".png";
         }
 
         function timecounter(){
