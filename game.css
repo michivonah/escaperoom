@@ -127,7 +127,7 @@ html{scroll-behavior: smooth;}
 
    #startscreen img{
      width: 90%;
-     max-width: 450px;
+     max-width: 400px;
    }
 
    .room{
@@ -381,9 +381,14 @@ html{scroll-behavior: smooth;}
        top: 0;
      }
 
+     #startscreen{
+       padding: 0;
+       padding-top: 0px;
+     }
+
      #startscreen img{
        width: auto;
-       height: 50vh;
+       height: 30vh;
      }
    }
 
