@@ -1,4 +1,5 @@
-# Michi's Escape Room
+# Michi's Escape Room <img src="https://escape.michivonah.ch/graphics/media/1.png" height="auto" width="30px">
+<img src="https://escape.michivonah.ch/graphics/media/1.png" height="auto" width="160px">
 
 ## Changelog
 ### Version 1.2.2 (3 april)
