@@ -1,6 +1,11 @@
 # Michi's Escape Room
 
 ## Changelog
+### Version 1.2.2 (3 april)
+- new backgrounds/room graphics
+- capitalized first letter of some titles
+- added new sounds
+
 ### Version 1.2.1 (5 march)
 - variable fruitbowls
 - added tutorial to homescreen
