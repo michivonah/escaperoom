@@ -1,4 +1,4 @@
-# Michi's Escape Room <img src="https://escape.michivonah.ch/graphics/media/1.png" height="auto" width="30px">
+# Michi's Escape Room <img src="https://escape.michivonah.ch/graphics/rooms/kitchen/teddy1.png" height="30px" width="auto">
 <img src="https://escape.michivonah.ch/graphics/media/1.png" height="auto" width="160px">
 
 ## Changelog
