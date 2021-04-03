@@ -41,14 +41,14 @@ html{scroll-behavior: smooth;}
    }
 
    #room1{
-     background-image: url("graphics/office.svg");
+     background-image: url("graphics/office2.svg");
      background-repeat: no-repeat;
      background-size: auto 100%;
      min-height: 100vh;
    }
 
    #room2{
-     background-image: url("graphics/bedroom2.svg");
+     background-image: url("graphics/bedroom3.svg");
      background-repeat: no-repeat;
      background-size: auto 100%;
      min-height: 100vh;
@@ -56,7 +56,7 @@ html{scroll-behavior: smooth;}
    }
 
    #room3{
-     background-image: url("graphics/room_template5.svg");
+     background-image: url("graphics/kitchen.svg");
      background-repeat: no-repeat;
      background-size: auto 100%;
      min-height: 100vh;
