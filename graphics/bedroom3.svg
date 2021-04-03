@@ -1,0 +1,37 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <defs>
+  <radialGradient r="0.5" cy="0.5" cx="0.5" spreadMethod="pad" id="svg_62">
+   <stop offset="0" stop-opacity="0.99609" stop-color="#ffdfb8"/>
+   <stop offset="1" stop-opacity="0.98438" stop-color="#fcd09f"/>
+  </radialGradient>
+  <radialGradient r="0.5" cy="0.5" cx="0.5" spreadMethod="pad" id="svg_63">
+   <stop offset="0" stop-color="#FFDFB8"/>
+   <stop offset="0.98828" stop-opacity="0.99219" stop-color="#fcd09f"/>
+  </radialGradient>
+  <radialGradient r="0.5" cy="0.5" cx="0.5" spreadMethod="pad" id="svg_64">
+   <stop offset="0" stop-opacity="0.99219" stop-color="#51b5ef"/>
+   <stop stop-opacity="0.99609" offset="1" stop-color="#84d3db"/>
+  </radialGradient>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_4">
+   <path id="svg_26" d="m596.24873,600.60497l0,-326.30477l208.75545,326.30477l-208.75545,0z" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="url(#svg_64)"/>
+   <rect id="svg_27" height="206.75397" width="599.24775" y="394.05871" x="0" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="url(#svg_64)"/>
+  </g>
+  <rect id="svg_14" height="400" width="678.08212" y="-1.46585" x="0.21048" stroke-opacity="null" stroke-width="0" stroke="#000" fill="url(#svg_62)"/>
+  <g id="svg_39">
+   <rect x="675.53256" id="svg_1" height="400" width="126.31354" y="0" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="url(#svg_63)"/>
+   <path id="svg_2" d="m803.82445,399.49634l0,200.00799l-128.20826,-200.00799l128.20826,0z" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="url(#svg_63)"/>
+  </g>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_32" y2="600.07696" x2="802.30201" y1="400.07696" x1="677.54633" fill-opacity="null" stroke-opacity="null" stroke-width="3" stroke="#000" fill="none"/>
+  <line stroke-width="3" stroke-linecap="null" stroke-linejoin="null" id="svg_29" y2="400.08302" x2="677.54633" y1="0.08302" x1="677.54633" stroke-opacity="null" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_33" y2="400.07696" x2="-0.18826" y1="400.03697" x1="677.95389" fill-opacity="null" stroke-opacity="null" stroke-width="3" stroke="#000" fill="none"/>
+  <text fill="#000000" stroke="#000" stroke-width="0" opacity="0.5" x="237.19849" y="349.45977" id="svg_3" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve" transform="matrix(1.48905, 0, 0, 1.43407, -33.4532, -102.369)">SHRAS</text>
+ </g>
+</svg>

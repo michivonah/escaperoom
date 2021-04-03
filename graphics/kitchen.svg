@@ -1,0 +1,36 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <defs>
+  <radialGradient r="0.5" cy="0.5" cx="0.5" spreadMethod="pad" id="svg_6">
+   <stop offset="0" stop-opacity="0.99609" stop-color="#ffdfb8"/>
+   <stop offset="0.86719" stop-opacity="0.98438" stop-color="#f7d1a8"/>
+  </radialGradient>
+  <radialGradient spreadMethod="pad" id="svg_68">
+   <stop offset="0" stop-color="#FFDFB8"/>
+   <stop offset="0.88672" stop-opacity="0.99609" stop-color="#f7d1a8"/>
+  </radialGradient>
+  <radialGradient r="0.5" cy="0.5" cx="0.5" spreadMethod="pad" id="svg_70">
+   <stop offset="0.4375" stop-opacity="0.98828" stop-color="#80c8ce"/>
+   <stop offset="1" stop-opacity="0.98828" stop-color="#79dce5"/>
+  </radialGradient>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_4">
+   <path id="svg_26" d="m206.19616,600.52801l0,-326.30477l-208.49496,326.30477l208.49496,0z" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="url(#svg_70)"/>
+   <rect id="svg_27" height="206.75397" width="598.5" y="393.98175" x="203.20088" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="url(#svg_70)"/>
+  </g>
+  <rect id="svg_14" height="400" width="675" y="-1" x="125" stroke-opacity="null" stroke-width="0" stroke="#000" fill="url(#svg_6)"/>
+  <g id="svg_39">
+   <rect x="0.85534" id="svg_1" height="400" width="126.15592" y="-0.07696" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="url(#svg_68)"/>
+   <path id="svg_2" d="m-1.12054,399.41938l0,200.00799l128.04828,-200.00799l-128.04828,0z" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="url(#svg_68)"/>
+  </g>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_32" y2="600" x2="0.4" y1="400" x1="125" fill-opacity="null" stroke-opacity="null" stroke-width="3" stroke="#000" fill="none"/>
+  <line stroke-width="3" stroke-linecap="null" stroke-linejoin="null" id="svg_29" y2="400.00606" x2="125" y1="0.00606" x1="125" stroke-opacity="null" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_33" y2="400" x2="799.59296" y1="399.96001" x1="124.59295" fill-opacity="null" stroke-opacity="null" stroke-width="3" stroke="#000" fill="none"/>
+ </g>
+</svg>

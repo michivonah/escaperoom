@@ -1,0 +1,37 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <defs>
+  <radialGradient r="0.5" cy="0.5" cx="0.5" spreadMethod="pad" id="svg_69">
+   <stop offset="0" stop-color="#FFDFB8"/>
+   <stop offset="0.98438" stop-opacity="0.98047" stop-color="#f7cfa5"/>
+  </radialGradient>
+  <radialGradient spreadMethod="pad" id="svg_101">
+   <stop offset="0" stop-color="#FFDFB8"/>
+   <stop offset="1" stop-opacity="0.99609" stop-color="#f7cfa5"/>
+  </radialGradient>
+  <radialGradient r="0.5" cy="0.5" cx="0.5" spreadMethod="pad" id="svg_109">
+   <stop offset="0" stop-opacity="0.98828" stop-color="#7cc7ea"/>
+   <stop offset="0.86328" stop-opacity="0.99219" stop-color="#84d3db"/>
+  </radialGradient>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="674.27436" height="506.20577" id="canvas_background" fill="none"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_4">
+   <path fill="url(#svg_109)" stroke="#000" stroke-width="0" stroke-opacity="null" fill-opacity="null" d="m207.19616,599.52801l0,-326.30477l-208.49496,326.30477l208.49496,0z" id="svg_26"/>
+   <rect fill="url(#svg_109)" stroke="#000" stroke-width="0" stroke-opacity="null" fill-opacity="null" x="204.20088" y="392.98175" width="598.5" height="206.75397" id="svg_27"/>
+  </g>
+  <rect y="0" fill="url(#svg_69)" stroke="#000" stroke-width="0" stroke-opacity="null" x="126" width="675" height="400" id="svg_14"/>
+  <g id="svg_39">
+   <rect fill="url(#svg_101)" stroke="#000" stroke-width="0" stroke-opacity="null" fill-opacity="null" y="-0.07696" width="126.15592" height="400" id="svg_1" x="0.85534"/>
+   <path fill="url(#svg_101)" stroke="#000" stroke-width="0" stroke-opacity="null" fill-opacity="null" d="m-1.12054,399.41938l0,200.00799l128.04828,-200.00799l-128.04828,0z" id="svg_2"/>
+  </g>
+  <line fill="none" stroke="#000" stroke-width="3" stroke-opacity="null" fill-opacity="null" x1="125" y1="400" x2="0.4" y2="600" id="svg_32" stroke-linejoin="null" stroke-linecap="null"/>
+  <line fill="none" stroke="#000" stroke-opacity="null" x1="125" y1="0.00606" x2="125" y2="400.00606" id="svg_29" stroke-linejoin="null" stroke-linecap="null" stroke-width="3"/>
+  <line fill="none" stroke="#000" stroke-width="3" stroke-opacity="null" fill-opacity="null" x1="124.59295" y1="399.96001" x2="799.59296" y2="400" id="svg_33" stroke-linejoin="null" stroke-linecap="null"/>
+  <text fill="#000000" stroke="#000" stroke-width="0" stroke-opacity="null" fill-opacity="null" x="413.60795" y="350.41685" id="svg_3" font-size="23" font-family="sans-serif" text-anchor="start" xml:space="preserve" font-weight="normal" font-style="normal" transform="matrix(3.26821, 0, 0, 2.73057, -887.031, -557.535)" opacity="0.75">LONDON</text>
+ </g>
+</svg>
