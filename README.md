@@ -1,7 +1,11 @@
 # Michi's Escape Room <img src="https://escape.michivonah.ch/graphics/rooms/kitchen/teddy1.png" height="30px" width="auto">
+Sie müssen einen siebenstelligen Zahlencode finden um das Gebäude in möglichst kurzer Zeit zu verlassen. Das ganze Spiel ist im Rahmen meiner Abschlussarbeit (für die Schule) entstanden.
+<br>
 <img src="https://escape.michivonah.ch/graphics/media/1.png" height="auto" width="160px">
 
 ## Changelog
+Hier erfährst du, was sich in den Updates geändert hat.
+
 ### Version 1.2.2 (3 april)
 - new backgrounds/room graphics
 - capitalized first letter of some titles
