@@ -40,6 +40,10 @@ html{scroll-behavior: smooth;}
      margin: 5px;
    }
 
+   #descripion{
+     text-align: justify;
+   }
+
 
    #game-container{
      margin: auto;
@@ -61,6 +65,7 @@ html{scroll-behavior: smooth;}
      max-width: 1110px;
    }
 
+
    #gameplay-options button{
      height: 36px;
      width: 36px;
@@ -71,6 +76,30 @@ html{scroll-behavior: smooth;}
      color: #fff;
      background: var(--theme);
      outline: none;
+   }
+
+   #gameplay-options button:hover{
+     filter: contrast(80%);
+   }
+
+   #share-btns{
+     display: none;
+   }
+
+   #share-btns button{
+     height: 36px;
+     width: 36px;
+     font-size: 18px;
+     border: none;
+     border-radius: 50%;
+     margin: 10px;
+     color: #fff;
+     background: var(--theme);
+     outline: none;
+   }
+
+   #share-btns button:hover{
+     filter: contrast(80%);
    }
 
    #screensize-error{
@@ -90,13 +119,22 @@ html{scroll-behavior: smooth;}
      font-size: 64px;
    }
 
+   a{
+     text-decoration: none;
+     color: var(--color);
+   }
+
+   a:hover{
+     text-decoration: underline;
+   }
+
    @keyframes loading{
      to{
        transform: rotate(720deg);
      }
    }
 
-   @media screen and (max-width:100vh){
+   @media screen and (max-width:100vh) and (max-width:900px){
      #screensize-error{
        display: block;
      }
