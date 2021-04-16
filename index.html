@@ -3,6 +3,10 @@
 <head>
          <title>Michi&prime;s Escape Room</title>
          <link rel="icon" type="image/png" href="graphics/media/1.png">
+         <link rel="apple-touch-icon" href="graphics/media/1.png">
+         <link rel="apple-touch-icon" sizes="152x152" href="graphics/media/1.png">
+         <link rel="apple-touch-icon" sizes="180x180" href="graphics/media/1.png">
+         <link rel="apple-touch-icon" sizes="167x167" href="graphics/media/1.png">
          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
          <script src="https://d3js.org/d3.v6.min.js"></script>
          <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
@@ -13,10 +17,18 @@
          <meta name="keywords" content="Escape, Escape Room, Exit Room, Room, Ausbrechen, Raum, Spiel, Browserspiel, Game, Gaming, Michi, Michi von Ah, von Ah, Freizeit, Schule, Abschlussarbeit, Abschlussprojekt, kostenlos, Pixabay">
          <meta name="author" content="Michi von Ah">
          <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-         <meta property="og:title" content="Michis Escape Room">
+
+         <meta property="og:title" content="Michi's Escape Room">
          <meta property="og:description" content="Sie müssen einen siebenstelligen Zahlencode finden um das Gebäude in möglichst kurzer Zeit zu verlassen.">
          <meta property="og:image" content="https://escape.michivonah.ch/graphics/media/2.png">
-         <meta property="og:url" content="escape.michivonah.ch">
+         <meta property="og:url" content="https://escape.michivonah.ch">
+         <meta property="og:site_name" content="Michi's Escape Room">
+         <meta property="twitter:title" content="Michi's Escape Room">
+         <meta property="twitter:description" content="Sie müssen einen siebenstelligen Zahlencode finden um das Gebäude in möglichst kurzer Zeit zu verlassen.">
+         <meta property="twitter:image" content="https://escape.michivonah.ch/graphics/media/2.png">
+         <meta name="twitter:card" content="summary_large_image">
+         <meta name="twitter:image:alt" content="Michi's Escape Room Logo">
+
          <link rel="manifest" href="manifest.json">
          <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
@@ -40,10 +52,19 @@
               <iframe id="game-frame" src="game.html" title="Escape Room" allowfullscreen="true" scrolling="no">Error, game can&prime;t load.</iframe>
             </div>
             <div id="gameplay-options">
-              <button id="share-btn" onclick="share()"><i class="fas fa-share-alt"></i></button>
+              <button id="share-btn" onclick="toggleShare()"><i class="fas fa-share-alt"></i></button>
               <button id="reload-btn" onclick="reloadGame()"><i class="fas fa-redo"></i></button>
               <button id="fullscreen-btn" onclick="toggleFullscreen()"><i class="fas fa-expand" id="fullscreen-icon"></i></button>
             </div>
+            <div id="share-btns">
+              <button onclick="share('twitter')"><i class="fab fa-twitter"></i></button>
+              <button onclick="share('facebook')"><i class="fab fa-facebook"></i></button>
+              <button onclick="share('reddit')"><i class="fab fa-reddit"></i></button>
+              <button onclick="share('whatsapp')"><i class="fab fa-whatsapp"></i></button>
+              <button onclick="share('mail')"><i class="fas fa-envelope"></i></button>
+              <button onclick="share('qrcode')"><i class="fas fa-qrcode"></i></button>
+            </div>
+            <p>Bei Fehlern oder Problemen kontaktieren Sie mich unter <a href="mailto:michisescaperoom@outlook.com?subject=Problem%20mit%20Michis%20Escape%20Room">michisescaperoom@outlook.com</a>.</p>
             </div>
           </div>
         </div>
@@ -125,8 +146,39 @@
           gameFrame.src = gameFrame.src;
         }
 
-        function share(){
-          window.open('https://escape.michivonah.ch/graphics/media/qrcode-escaperoom.png');
+        function toggleShare(){
+          var shareButtons = document.getElementById('share-btns');
+          if(shareButtons.style.display == "block"){
+            shareButtons.style.display = "none";
+          }
+          else{
+            shareButtons.style.display = "block";
+          }
+        }
+
+        function share(service){
+          if(service == null){
+            console.log("Error");
+          }
+          else if(service == "qrcode"){
+            window.open('https://escape.michivonah.ch/graphics/media/qrcode-escaperoom.png');
+          }
+          else if(service == "twitter"){
+            window.open('https://twitter.com/intent/tweet?status=Ihr%20müsst%20unbedingt%20das%20Spiel%20Michis%20Escape%20Room%20spielen.%20Ihr%20findet%20es%20unter%20escape.michivonah.ch!');
+          }
+          else if(service == "facebook"){
+            window.open('https://www.facebook.com/sharer/sharer.php?u=https://escape.michivonah.ch');
+          }
+          else if(service == "reddit"){
+            window.open('http://www.reddit.com/submit?url=https://escape.michivonah.ch');
+          }
+          else if(service == "mail"){
+            window.open("mailto:?subject=Michis%20Escape%20Room&body=Ihr%20müsst%20unbedingt%20das%20Spiel%20Michis%20Escape%20Room%20spielen.%20Ihr%20findet%20es%20unter%20escape.michivonah.ch!");
+          }
+          else if(service == "whatsapp"){
+            window.open('https://api.whatsapp.com/send?text=Ihr%20m%C3%BCsst%20unbedingt%20das%20Spiel%20Michis%20Escape%20Room%20spielen.%20Ihr%20findet%20es%20unter%20escape.michivonah.ch!');
+          }
+
         }
         </script>
 </body>
