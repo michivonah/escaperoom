@@ -1,3 +1,4 @@
+
 html{scroll-behavior: smooth;}
 
    body{
@@ -145,6 +146,9 @@ html{scroll-behavior: smooth;}
 
    @media screen and (max-height:650px){
      #descripion{
+       display: none;
+     }
+     #contact-txt{
        display: none;
      }
      #gameplay-options{
