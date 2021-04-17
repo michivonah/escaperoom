@@ -91,7 +91,7 @@
               <button onclick="playgame()" id="start-btn">Start</button>
               <button onclick="createNewWindow('Anleitung', 'tutorial')">Anleitung</button>
               <button onclick="createNewWindow('Quellen', 'sources')">Quellen</button>
-              <p style="font-size: 12px; position: absolute; bottom: 0; margin-left: 10px;">Version 1.2.2</p>
+              <p style="font-size: 12px; position: absolute; bottom: 0; margin-left: 10px;">Version 1.2.3</p>
             </div>
           </div>
 
@@ -633,7 +633,9 @@
             }
             else if(windowtype == "sources"){
               var newText = document.createElement('p');
-              newText.textContent = "Alle Grafiken der Gegenstände sind von Pixabay. Einige der Grafiken habe ich vor der Verwendung in meinem Projekt bearbeitet, damit sie zum Inhalt passen. Die Räume im Hintergrund habe ich alle selbst gezeichnet. Die Musik ist auch von Pixabay. Das Logo wurde mit Canva erstellt.";
+              newText.style.textAlign = "justify";
+              newText.style.margin = "5px";
+              newText.textContent = "Alle Grafiken der Gegenstände sind von Pixabay. Einige der Grafiken habe ich vor der Verwendung in meinem Projekt bearbeitet, damit sie zum Inhalt passen. Die Räume im Hintergrund und alle Sounds habe ich selbst gemacht. Die Hintergrundmusik ist auch von Pixabay. Das Logo wurde mit Canva erstellt.";
               newWindow.appendChild(newText);
               var newImage = document.createElement('img');
               newImage.src = "https://pixabay.com/static/img/public/medium_rectangle_b.png";
@@ -641,6 +643,8 @@
               newImage.style.borderRadius = "8px";
               newImage.draggable = false;
               newWindow.appendChild(newImage);
+              newWindow.style.padding = "5px";
+              newWindow.style.paddingRight = "0";
               newWindow.style.background = "#e67e22";
               newWindow.style.color = "#fff";
               newWindow.style.border = "8px solid #fff";
