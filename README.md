@@ -6,6 +6,13 @@ Sie müssen einen siebenstelligen Zahlencode finden um das Gebäude in möglichs
 ## Changelog
 Hier erfährst du, was sich in den Updates geändert hat.
 
+### Version 1.2.3 (16/17 april)
+- added new meta tags
+- added email adress for contact
+- added social media share buttons
+- fixed a resizing bug (fullscreen)
+- changed the sources text
+
 ### Version 1.2.2 (3 april)
 - new backgrounds/room graphics
 - capitalized first letter of some titles
