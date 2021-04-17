@@ -20,9 +20,11 @@
 
          <meta property="og:title" content="Michi's Escape Room">
          <meta property="og:description" content="Sie müssen einen siebenstelligen Zahlencode finden um das Gebäude in möglichst kurzer Zeit zu verlassen.">
-         <meta property="og:image" content="https://escape.michivonah.ch/graphics/media/2.png">
+         <meta property="og:image" itemprop="image" content="https://escape.michivonah.ch/graphics/media/2.png">
+         <meta property="og:image:type" content="image/png">
          <meta property="og:url" content="https://escape.michivonah.ch">
          <meta property="og:site_name" content="Michi's Escape Room">
+         <meta property="og:type" content="website">
          <meta property="twitter:title" content="Michi's Escape Room">
          <meta property="twitter:description" content="Sie müssen einen siebenstelligen Zahlencode finden um das Gebäude in möglichst kurzer Zeit zu verlassen.">
          <meta property="twitter:image" content="https://escape.michivonah.ch/graphics/media/2.png">
@@ -64,7 +66,7 @@
               <button onclick="share('mail')"><i class="fas fa-envelope"></i></button>
               <button onclick="share('qrcode')"><i class="fas fa-qrcode"></i></button>
             </div>
-            <p id="contact-txt">Bei Fehlern oder Problemen kontaktieren Sie mich unter <a href="mailto:michisescaperoom@outlook.com?subject=Problem%20mit%20Michis%20Escape%20Room">michisescaperoom@outlook.com</a>.</p>
+            <p id="contact-txt">Bei Fehlern, Problemen oder Feedback kontaktieren Sie mich unter <a href="mailto:michisescaperoom@outlook.com?subject=Problem%20mit%20Michis%20Escape%20Room">michisescaperoom@outlook.com</a>.</p>
             </div>
           </div>
         </div>
@@ -79,7 +81,7 @@
         $(window).on("load", function(){
           $("#loading-screen").fadeOut(800);
           if(window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem('darkmode') == "true"){
-            document.body.style.setProperty('--color', '#fff');
+            document.body.style.setProperty('--color', '#f2f2f2');
             document.body.style.setProperty('--background', '#181818');
             document.body.style.setProperty('--theme', '#e67e22');
             console.log('Darkmode activated.');
@@ -92,9 +94,19 @@
           var gameFrame = document.getElementById("game-frame");
           var fullScreenBtn = document.getElementById('fullscreen-btn');
           var fullScreenBtnIcon = document.getElementById('fullscreen-icon');
+          var contactTxt = document.getElementById('contact-txt');
+          contactTxt.style.display = "none";
           //game.style.paddingTop = "15vh";
-          gameFrame.style.maxWidth = "calc(100vw * 0.75)";
-          gameFrame.style.maxHeight = "calc(100vw * 0.6)";
+          if($(window).height() <= 800){
+            gameFrame.style.maxWidth = "calc(100vw * 0.8)";
+            gameFrame.style.maxHeight = "calc(100vw * 0.6)";
+          }
+          else{
+            gameFrame.style.maxWidth = "calc(100vw * 0.75)";
+            gameFrame.style.maxHeight = "calc(100vw * 0.6)";
+          }
+          //gameFrame.style.maxWidth = "calc(100vw * 0.75)";
+          //gameFrame.style.maxHeight = "calc(100vw * 0.6)";
           gameFrame.style.width = "100vw";
           gameFrame.style.height = "100vh";
           fullScreenBtn.style.position = "absolute";
@@ -114,6 +126,8 @@
           var gameFrame = document.getElementById("game-frame");
           var fullScreenBtn = document.getElementById('fullscreen-btn');
           var fullScreenBtnIcon = document.getElementById('fullscreen-icon');
+          var contactTxt = document.getElementById('contact-txt');
+          contactTxt.style.display = "block";
           //game.style.paddingTop = "0";
           gameFrame.style.maxWidth = "calc(1100px * 0.8)";
           gameFrame.style.maxHeight = "calc(1100px * 0.6)";
