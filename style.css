@@ -55,10 +55,12 @@ html{scroll-behavior: smooth;}
    }
 
    #game-container iframe{
-     width: 80%;
+     width: 80vw;
      height: 60vw;
-     max-width: calc(1100px * 0.8);
-     max-height: calc(1100px * 0.6);
+     max-width: 880px;
+     max-height: 660px;
+     min-width: 27vw;
+     min-height: 20.25vw;
      scroll-behavior: smooth;
      border: 4px solid;
      border-radius: 8px;
