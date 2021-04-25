@@ -40,8 +40,13 @@ html{scroll-behavior: smooth;}
      margin: 5px;
    }
 
-   #descripion{
+   #description{
      text-align: justify;
+   }
+
+   #description a{
+     user-select: none;
+     cursor: pointer;
    }
 
 
@@ -119,6 +124,10 @@ html{scroll-behavior: smooth;}
      font-size: 64px;
    }
 
+   #stats{
+     display: none;
+   }
+
    a{
      text-decoration: none;
      color: var(--color);
@@ -144,10 +153,7 @@ html{scroll-behavior: smooth;}
    }
 
    @media screen and (max-height:600px){
-     #descripion{
-       display: none;
-     }
-     #contact-txt{
+     #description{
        display: none;
      }
      #gameplay-options{
