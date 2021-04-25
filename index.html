@@ -129,16 +129,16 @@
           var fullScreenBtn = document.getElementById('fullscreen-btn');
           var fullScreenBtnIcon = document.getElementById('fullscreen-icon');
           //game.style.paddingTop = "15vh";
-          if($(window).height() <= 800){
+          if($(window).height() <= 600){
             gameFrame.style.maxWidth = "calc(100vw * 0.8)";
             gameFrame.style.maxHeight = "calc(100vw * 0.6)";
           }
           else{
             gameFrame.style.maxWidth = "calc(100vw * 0.75)";
-            gameFrame.style.maxHeight = "calc(100vw * 0.6)";
+            gameFrame.style.maxHeight = "calc(100vw * 0.5625)";
           }
-          //gameFrame.style.maxWidth = "calc(100vw * 0.75)";
-          //gameFrame.style.maxHeight = "calc(100vw * 0.6)";
+          //gameFrame.style.maxWidth = "80vw";
+          //gameFrame.style.maxHeight = "60vw";
           gameFrame.style.width = "100vw";
           gameFrame.style.height = "100vh";
           fullScreenBtn.style.position = "absolute";
