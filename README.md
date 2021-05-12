@@ -6,6 +6,11 @@ Sie müssen einen siebenstelligen Zahlencode finden um das Gebäude in möglichs
 ## Changelog
 Hier erfährst du, was sich in den Updates geändert hat.
 
+### Version 1.2.4 (12 may)
+- changed css room background color
+- writing issue fixed
+- PWA support
+
 ### Version 1.2.3 (16/17 april)
 - added new meta tags
 - added email adress for contact
