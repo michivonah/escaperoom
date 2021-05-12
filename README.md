@@ -4,7 +4,8 @@ Sie müssen einen siebenstelligen Zahlencode finden um das Gebäude in möglichs
 <img src="https://escape.michivonah.ch/graphics/media/1.png" height="auto" width="160px">
 
 ## Social Media
-Das sind die Social Media Accounts von "Michi's Escape Room".
+Das sind die Social Media Accounts von Michi's Escape Room.
+<br>
 <a href="https://www.youtube.com/channel/UCM6IQmN5b74OFfceP7CPhAg"><img width="auto" height="30px" src="https://cdn.pixabay.com/photo/2017/06/23/02/35/youtube-2433301_960_720.png"></a>
 <a href="https://www.pinterest.ch/michiescaperoom/"><img width="auto" height="30px" src="https://cdn.pixabay.com/photo/2017/06/23/02/32/pinterest-2433266_960_720.png"></a>
 <a href="https://giphy.com/channel/michivonah"><img width="auto" height="30px" src="https://giphy.com/static/img/icons/apple-touch-icon-167px.png"></a>
