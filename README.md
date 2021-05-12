@@ -9,7 +9,7 @@ Hier erfährst du, was sich in den Updates geändert hat.
 ### Version 1.2.4 (12 may)
 - changed css room background color
 - writing issue fixed
-- PWA support
+- PWA support (download as app)
 
 ### Version 1.2.3 (16/17 april)
 - added new meta tags
