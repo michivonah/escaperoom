@@ -93,16 +93,19 @@
 
         <script>
         // Loading
-        $(window).on("load", function(){
+        window.addEventListener('load', () => {
           $("#loading-screen").fadeOut(800);
           if(window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem('darkmode') == "true"){
             document.body.style.setProperty('--color', '#f2f2f2');
             document.body.style.setProperty('--background', '#181818');
             document.body.style.setProperty('--theme', '#e67e22');
             console.log('Darkmode activated.');
-        	}
+          }
+          if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js');
+          }
           console.log("Page loaded.");
-        });
+      });
 
         /*$(document).keyup(function(e){
           if(e.key === "Escape"){
