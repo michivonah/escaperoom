@@ -126,10 +126,6 @@ html{scroll-behavior: smooth;}
      font-size: 64px;
    }
 
-   #stats{
-     display: none;
-   }
-
    a{
      text-decoration: none;
      color: var(--color);
